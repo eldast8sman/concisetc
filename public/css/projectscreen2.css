@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/*********************************** HERO SECTION ***************************/
+.ps2_hero_section {
+  background: linear-gradient(
+    96.73deg,
+    #002653 0.03%,
+    #260b03 46.88%,
+    #002653 115.5%
+  );
+  font-family: 'Inter', sans-serif;
+}
+
+.ps2_hero_section h1 {
+  font-weight: 800;
+}
+
+.ps2_hero_section p {
+  font-weight: 500;
+}
+
+/*********************************** PROBLEM SECTION ***************************/
+.problem_section {
+  font-family: 'Inter', sans-serif;
+  background: url(/imgs/ps2/problembcg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.problem_section_cont {
+  border-radius: var(--border-radius8);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.09);
+}
+
+.problem_content_cont {
+  border: 1px solid var(--primary-300);
+  border-radius: var(--border-radius8);
+}
+
+.problem_content_cont h4 {
+  font-weight: 500;
+  color: var(--primary-1000);
+}
+
+.problem_content_cont p {
+  font-family: 'Manrope', sans-serif;
+}
+
+/*********************************** EMPTY GRADIENT SECTION ***************************/
+.empty_gradient_section {
+  background: linear-gradient(
+    96.73deg,
+    #002653 0.03%,
+    #260b03 46.88%,
+    #002653 115.5%
+  );
+  height: 600px;
+}
+
+/*********************************** EMPTY WHITE SECTION ***************************/
+.empty_white_section {
+  height: 600px;
+}
+
+/*********************************** CONCLUSION SECTION ***************************/
+.conclusion_section {
+  font-family: 'Inter', sans-serif;
+}
+
+.conclusion_section h4 {
+  font-weight: 700;
+}
+
+.conclusion_gradient_cont {
+  background: linear-gradient(
+    96.73deg,
+    #002653 0.03%,
+    #260b03 46.88%,
+    #002653 115.5%
+  );
+  border-radius: 20px;
+}
