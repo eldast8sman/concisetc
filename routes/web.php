@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::controller(PageController::class)->group(function(){
     Route::get('/', 'index');
     Route::get('/about-us', 'about');
+});
+
+Route::prefix('dashboard')->group(function(){
+    Route::controller(AdminController::class)->group(function(){
+        Route::get('/', 'index');
+        
+        Route::get('/login', 'login');
+    });
 });

@@ -1,7 +1,7 @@
 @extends('layouts.admin.auth')
 
 @section('title')
-    CFCI Admin Login
+    Concise Admin Login
 @endsection
 
 @section('content')
