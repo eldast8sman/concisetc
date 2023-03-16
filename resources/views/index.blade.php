@@ -8,9 +8,9 @@
   <!---------------------------- HERO SECTION ---------------------------->
   <section class="py-0 py-md-5 hero_section">
     <div class="container-md py-5 text-center text-md-start">
-      <h1 class="display-4 hero_we">Your Technology Partner for Business Excellence</h1>
-      <h1 class="display-4 hero_simplified">Improving Business Efficiency through Innovative Technology &</h1>
-      <h1 class="display-4 hero_you">Custom Software Solutions for the Construction Industry</h1>
+      <h1 class="display-4 hero_we">We Create</h1>
+      <h1 class="display-4 hero_simplified">Innovative Technology & Custom Software Solutions</h1>
+      <h1 class="display-4 hero_you">For Construction Business Excellence</h1>
       <div class="row">
         <p class="col col-md-6 text-center text-md-start my-3">
             We're a B2B software solutions agency that's committed to helping the construction industry, school districts,
@@ -20,7 +20,7 @@
       <div class="mb-md-5">
 
         <button class="mt-2 me-3 buttn">GET STARTED</button>
-        {{-- <button class="mt-2 gradient_btn gradient_btn_find">FIND OUT MORE</button> --}}
+        <button class="mt-2 gradient_btn gradient_btn_find">FIND OUT MORE</button>
       </div>
     </div>
   </section>
@@ -71,6 +71,17 @@
 
       <div class="container-fluid px-sm-5 px-md-1 px-lg-5 text-center">
         <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <div class="pt-3 pb-1 px-2 services_col ">
+              <div class="services_icon_cont">
+                <img src="imgs/services/hammer.svg" alt="hammer icon" />
+              </div>
+              <h5 class="my-3">Minority Program Management Tools</h5>
+              <p class="mx-lg-4">
+                Bring every stakeholder on board in real-time and manage every aspect of your minority business from a dedicated dashboard that makes procurement & reporting easier.
+              </p>
+            </div>
+          </div>
           
           <div class="col-12 col-md-6">
             <div class="pt-3 pb-1 px-2 services_col ">
@@ -79,10 +90,7 @@
               </div>
               <h5 class="my-3">Logistic Solutions</h5>
               <p class="mx-lg-4">
-                Manage every aspect – from GPS tracking to pickups & delivery notifications, reporting, payroll, and billing – of your
-                trucking and logistics services right from a single dashboard. We provide custom management systems, you run the operations.
-                <br>
-                <br>
+                Monitor every aspect – GPS tracking, pickups & delivery, reporting, payroll, etc – of your trucking and logistics services right from a single CMS dashboard.
               </p>
             </div>
           </div>
@@ -94,8 +102,7 @@
               </div>
               <h5 class="my-3">School District Solutions</h5>
               <p class="mx-lg-4">
-                Let's help you make education better by improving internal communications and document sharing within the parent/teacher community through
-                customized and ready-to-use web/mobile dashboards. Have all stakeholders communicate remotely and from a secured digital space.
+                Improve internal communications and document sharing within the parent/teacher community & between all stakeholders through customized web/mobile dashboards.
               </p>
             </div>
           </div>
@@ -107,9 +114,7 @@
               </div>
               <h5 class="my-3">Construction Software Development</h5>
               <p class="mx-lg-4">
-                Develop and enjoy user-friendly custom software solutions specially built for your construction business.
-                Address your clients' needs in real-time by building custom, web/mobile platforms that make doing business with you seamless.
-                Our custom construction industry software development solutions serve your clients' best interests without neglecting your business needs.
+                Leverage user-friendly web & mobile custom software solutions developed to make doing business & managing your construction business seamless.
               </p>
             </div>
           </div>
@@ -119,29 +124,9 @@
               <div class="services_icon_cont">
                 <img src="imgs/services/code.svg" alt="code icon" />
               </div>
-              <h5 class="my-3">Customized Construction Websites and Mobile App Development</h5>
+              <h5 class="my-3">Websites and Mobile App Development</h5>
               <p class="mx-lg-4">
-                Your website/app is the first point of contact for most of your clients. The first impression does matter.
-                Employ our expertise to build fully responsive, well-optimized, and user-friendly websites & mobile applications with
-                custom features that are tailored just for your construction business.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6">
-            <div class="pt-3 pb-1 px-2 services_col ">
-              <div class="services_icon_cont">
-                <img src="imgs/services/hammer.svg" alt="hammer icon" />
-              </div>
-              <h5 class="my-3">Minority Program Management Tools</h5>
-              <p class="mx-lg-4">
-                Let's help you scale your business, giving you a level playing ground,and an edge over your competitors by providing the
-                tools and support that you need to deliver amazing construction projects.
-                <br /><br />
-                Enhance productivity by working with our all-in-one, one-of-a-kind dashboard, which makes procurement and reporting easier.
-                Enhance interaction amongst your stakeholders – subcontractors, program managers, & team members – effective collaboration
-                from one single space. Monitor every aspect of your construction project from start to finish, in real-time, and from one single dashboard.
-                Increase efficiency by adopting the use of customized reporting dashboards, and interactive platforms, built just for your team.
+                Employ our expertise to build fully responsive, well-optimized & user-friendly websites & mobile apps with custom features integrated just for your business.
               </p>
             </div>
           </div>
@@ -257,7 +242,7 @@
     <div class="container-lg">
       <p class="mb-0 text-center small_header">Testimonials</p>
       <h2 class="mt-1 mb-5 text-center big_header">
-        Our words are enough...but, we can offer you more. See what our clients are saying about our custom software development solutions
+        See what our clients are saying about our custom software solutions
       </h2>
 
       <div class="d-flex flex-column flex-md-row mb-4 align-items-center justify-content-center">
@@ -331,8 +316,7 @@
                 </div>
                 <div>
                   <small class="d-block fw-bolder mantra_small_heading">Experience and Expertise</small>
-                  <small class="d-block  mantra_text">We believe that every business deserves the best technology and cutting-edge software development solutions that accelerate growth.
-                    To provide you with the best, we employ the most experienced hands, relying on our broad expertise, and in-depth knowledge.</small>
+                  <small class="d-block  mantra_text">Your business deserves the very best software solutions, that's why we employ the most experienced hands only to develop solutions that enhance your processes</small>
                 </div>
               </div>
               <div class="d-flex my-4 align-items-center">
@@ -341,18 +325,25 @@
                 </div>
                 <div>
                   <small class="d-block mantra_small_heading">Efficiency and Productivity</small>
-                  <small class="d-block mantra_text">At Concise Software Solutions, our mission is to make doing business easier and better for you. We are here to help you boost efficiency
-                    and productivity by providing accurate, reliable, and cost-effective custom software solutions that meet your business needs.</small>
+                  <small class="d-block mantra_text">We boost your efficiency and productivity by providing accurate, reliable, and cost-effective custom software solutions that meet your business needs.</small>
                 </div>
               </div>
-              <div class="d-flex align-items-center">
+              <div class="d-flex my-4 align-items-center">
                 <div class="me-4 mantra_hammer_cont">
                   <img src="imgs/mantra/hammer3.svg" alt="hammer icon">
                 </div>
                 <div>
                   <small class="d-block mantra_small_heading">Client Support and Satisfaction</small>
-                  <small class="d-block mantra_text">It's all about you. We stop at nothing to ensure that you are satisfied with our services. From consultation to technical assistance and 24/7 customer support,
-                    we hold you by the hand and guide you through getting the most from your business, through innovative technology.</small>
+                  <small class="d-block mantra_text">From consultation to technical assistance to 24/7 support, it's all about you. We stop at nothing to ensure that you are satisfied with our solutions.</small>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="me-4 mantra_hammer_cont">
+                  <img src="imgs/mantra/hammer1.svg" alt="hammer icon">
+                </div>
+                <div>
+                  <small class="d-block mantra_small_heading">Originality and Peculiarity</small>
+                  <small class="d-block mantra_text">Every business has its unique set of goals. Our strategy is to design custom software solutions that adopt your business model and let you achieve your goals.</small>
                 </div>
               </div>
             </div>

@@ -57,13 +57,12 @@
   <section class="py-5 ready_to_take">
     <div class="container-lg text-center">
       <h1 class="m-auto lh-sm">
-        Ready to take your business to the next level?
+        Ready to scale up & boost your ROI with software solutions?
       </h1>
       <p class="mx-auto mb-4 my-sm-3">
-        We’ve got the best strategist, senior designers and expert developers
-        that can help you achieve your goal
+        We've got an experienced & dedicated team of experts ready to kickstart a conversation about your software needs.
       </p>
-      <button class="butn">Get in touch with us</button>
+      <button class="butn">Contact us to get started!</button>
     </div>
   </section>
 
