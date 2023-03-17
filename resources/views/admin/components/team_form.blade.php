@@ -47,7 +47,7 @@
             image_upload
         @endslot
         @slot('input_name')
-            filename
+            file
         @endslot
         @slot('input_accept')
             image/jpg, image/jpeg, image/png

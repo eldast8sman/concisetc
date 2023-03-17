@@ -24,13 +24,13 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function(){
     Route::controller(BlogController::class)->group(function(){
         Route::post('/blogs', 'store');
-        Route::put('/blogs/{id}', 'update');
+        Route::post('/blogs/{id}', 'update');
         Route::delete('/blogs/{id}', 'destroy');
     });
 
     Route::controller(TeamController::class)->group(function(){
         Route::post('/teams', 'store');
-        Route::put('/teams/{id}', 'update');
+        Route::post('/teams/{id}', 'update');
         Route::delete('/teams/{id}', 'destroy');
     });
 });

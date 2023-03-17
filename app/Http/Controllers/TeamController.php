@@ -38,7 +38,7 @@ class TeamController extends Controller
             if(!empty($request->file)){
                 if($request->file instanceof UploadedFile){
                     $uploaded_image = FileController::uploadFile($request->file, 'team');
-                    $all['filename'] = $uploaded_image;
+                    $all['filename'] = 'img/team/'.$uploaded_image;
                     if(!empty($team->filename)){
                         $old_path = $team->filename;
                     }

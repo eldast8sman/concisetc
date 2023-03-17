@@ -18,9 +18,10 @@ class FileController extends Controller
             if(($extension == 'jpg') || ($extension == 'jpeg') || ($extension == 'gif') || ($extension == 'png')){
                 $directory = public_path('img/'.$destination.'/');
                 if(!File::exists($directory)){
-                    File::makeDirectory($directory);
+                    File::makeDirectory($directory, 0777, true);
                 }
                 $filepath->move(public_path('img/'.$destination.'/'), $name);
+                return $name;
             } elseif(($extension == 'mp3') || ($extension == 'mpeg3') || ($extension == "mpeg")){
                 $filepath->move(public_path('audio/'.$destination.'/'), $name);
                 return $name;
