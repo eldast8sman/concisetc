@@ -69,7 +69,7 @@ $("a#dash_logout").click(function(e){
             localStorage.setItem("email", "");
             toaster_success("Successfully Logged Out");
 
-            window.location = ADMIN_URL;
+            window.location = BASE_URL+"dashboard";
         },
         error: function(response){
             console.log(response.responseText);
@@ -123,7 +123,7 @@ for(let i=0; i < team_forms.length; i++){
             },
             success: function(response){
                 if(response.status == "success"){
-                    window.location = ADMIN_URL;
+                    window.location = BASE_URL+"dashboard";
                 } else {
                     toaster_error(response.message);
                 }
@@ -157,7 +157,7 @@ for(let i=0; i<team_del_buttons.length; i++){
                     toaster_success("Deleting Team Member...");
 
                     function redirect(){
-                        window.location = ADMIN_URL;
+                        window.location = BASE_URL+"dashboard";
                     }
 
                     setTimeout(redirect(), 2500);
@@ -168,6 +168,147 @@ for(let i=0; i<team_del_buttons.length; i++){
             error: function(response){
                 console.log(response.responseText);
                 toaster_error(response.responseText);
+            }
+        })
+    }
+}
+
+$("form.blog_form").submit(function(e){
+    e.preventDefault();
+
+    var title = $("input#blog_title").val();
+    var author = $("input#blog_author").val();
+    var body = $("textarea#blog_bodu").val();
+    var summary = $("textarea#blog_summary").val();
+    var image_files = $('#image_upload')[0].files;
+    var published = $("input#publication_date").val();
+    var data_id = e.target.dataset['id'];
+
+    if(data_id == ""){
+        if((title == "") || (author == "") || (body == "") || (summary == "") || (published == "") || (image_files.length < 1)){
+            var error_message = "";
+            if(title == ""){
+                error_message += "Article Title must be provided! ";
+            }
+            if(author == ""){
+                error_message += "Author must be provided! ";
+            }
+            if(body == ""){
+                error_message += "Blog's Body must be provided! ";
+            }
+            if(published == ""){
+                error_message += "Blog's Publication Date must be provided! ";
+            }
+            if(image_files.length < 1){
+                error_message += "Blog Photo must be uploaded! ";
+            }
+            if(summary == ""){
+                error_message += "Blog's Summary must be provided"
+            }
+            toaster_error(error_message);
+            return false;
+        }
+
+        var image_file = image_files[0].type;
+        if((image_file != "image/jpg") && (image_file != "image/jpeg") && (image_file != "image/png")){
+            toaster_error("Wrong Image Filetype");
+            return false;
+        }
+
+        url = API_URL+"blogs";
+    } else {
+        if((title == "") || (author == "") || (body == "") || (summary == "") || (published == "")){
+            var error_message = "";
+            if(title == ""){
+                error_message += "Article Title must be provided! ";
+            }
+            if(author == ""){
+                error_message += "Author must be provided! ";
+            }
+            if(body == ""){
+                error_message += "Blog's Body must be provided! ";
+            }
+            if(published == ""){
+                error_message += "Blog's Publication Date must be provided! ";
+            }
+            if(summary == ""){
+                error_message += "Blog's Summary must be provided"
+            }
+            toaster_error(error_message);
+            return false;
+        }
+
+        if(image_files.length > 0){
+            image_file = image_files[0].type;
+            if((image_file != "image/jpg") && (image_file != "image/jpeg") && (image_file != "image/png")){
+                toaster_error("Wrong Image Filetype");
+                return false;
+            }
+        }
+        
+        url = API_URL+"blogs/"+data_id;
+    }
+    var fd = new FormData(document.querySelector(".blog_form"));
+    toaster_success("Blog Uploading...");
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: fd,
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            "Authorization": "Bearer "+localStorage.getItem('token'),
+            "Accept": "application/json"
+        },
+        success: function(response){
+            if(response.status == "success"){
+                toaster_success(response.message);
+                if(data_id == ""){
+                    window.location= ADMIN_URL+"blogs"
+                } else {
+                    window.location = ADMIN_URL+"blogs/"+response.data.slug
+                }
+            } else {
+                toaster_error(response.message);
+            }
+        },
+        error: function(response){
+            message = JSON.parse(response.responseText);
+            toaster_error(message.message);
+            console.log(message);
+        }
+    })
+});
+
+var del_blog = document.querySelector("#delete_blog");
+if(del_blog){
+    del_blog.onclick = function(e){
+        var blog_id = e.target.dataset['id'];
+    
+        $.ajax({
+            type: "DELETE",
+            url: API_URL+"blogs/"+blog_id,
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer "+localStorage.getItem('token'),
+                "Content-Type": "application/json",
+                "Acceppt": "application/json"
+            },
+            success: function(response){
+                if(response.status == "success"){
+                    toaster_success(response.message);
+    
+                    window.location = ADMIN_URL+"blogs";
+                } else {
+                    toaster_error(response.message);
+                }
+            },
+            error: function(response){
+                message = JSON.parse(response.responseText);
+                toaster_error(message.message);
+                console.log(message);
             }
         })
     }

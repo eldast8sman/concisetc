@@ -25,5 +25,8 @@ Route::prefix('dashboard')->group(function(){
         Route::get('/', 'index');
         
         Route::get('/login', 'login');
+
+        Route::get('/blogs', 'blogs');
+        Route::get('/blog/{slug}', 'blog');
     });
 });

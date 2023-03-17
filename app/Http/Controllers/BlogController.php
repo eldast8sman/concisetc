@@ -37,7 +37,7 @@ class BlogController extends Controller
             if(!empty($request->file)){
                 if($request->file instanceof UploadedFile){
                     $uploaded_image = FileController::uploadFile($request->file, 'team');
-                    $all['filename'] = $uploaded_image;
+                    $all['filename'] = 'img/blog/'.$uploaded_image;
                     if(!empty($blog->filename)){
                         $old_path = $blog->filename;
                     }

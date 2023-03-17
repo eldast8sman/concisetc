@@ -25,6 +25,8 @@ class UpdateBlogRequest extends FormRequest
             'title' => 'required|string',
             'body' => 'required|string',
             'author' => 'required|string',
+            'summary' => 'required|string',
+            'publication_date' => 'required|date',
             'file' => 'mimes:png,jpg,jpeg|max:2048'
         ];
     }
