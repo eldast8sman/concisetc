@@ -15,7 +15,7 @@
                     All Uploaded Blogs
                 @endslot
                 @slot('other_links')
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Blogs</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Blogs</a></li>
                 @endslot
             @endcomponent
             <div class="row">

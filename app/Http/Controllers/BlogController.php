@@ -36,7 +36,7 @@ class BlogController extends Controller
             $old_path = "";
             if(!empty($request->file)){
                 if($request->file instanceof UploadedFile){
-                    $uploaded_image = FileController::uploadFile($request->file, 'team');
+                    $uploaded_image = FileController::uploadFile($request->file, 'blog');
                     $all['filename'] = 'img/blog/'.$uploaded_image;
                     if(!empty($blog->filename)){
                         $old_path = $blog->filename;
@@ -70,10 +70,16 @@ class BlogController extends Controller
 
     public function destroy($id){
         if(!empty($blog = Blog::find($id))){
-            $blog->delete;
+            $blog->delete();
             if(!empty($blog->filename)){
                 FileController::delete_file($blog->filename);
             }
+
+            return response([
+                'status' => 'success',
+                'message' => 'Blog successfully deleted',
+                'data' => $blog
+            ], 200);
         } else {
             return response([
                 'status' => 'failed',

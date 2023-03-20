@@ -3,6 +3,13 @@ var BASE_URL = "http://127.0.0.1:8000/";
 var ADMIN_URL = BASE_URL + "dashboard/";
 var API_URL = BASE_URL + "api/";
 
+function html_encode(text) {
+    return $("<textarea/>")
+      .text(text)
+      .html();
+  }
+
+
 $(".loginForm").submit(function(e) {
     e.preventDefault();
 
@@ -248,7 +255,11 @@ $("form.blog_form").submit(function(e){
         
         url = API_URL+"blogs/"+data_id;
     }
+
+    edited = tinymce.activeEditor.getContent();
+    encoded = html_encode(edited);
     var fd = new FormData(document.querySelector(".blog_form"));
+    fd.set('body', encoded);
     toaster_success("Blog Uploading...");
     $.ajax({
         type: "POST",
@@ -355,3 +366,16 @@ function toaster_success(success_message){
         tapToDismiss: !1
     })
 }
+
+$('textarea.wysiwyg_editor').tinymce({
+    height: 500,
+    menubar: false,
+    plugins: [
+      'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+      'anchor', 'searchreplace', 'visualblocks', 'fullscreen',
+      'insertdatetime', 'media', 'table', 'code', 'help', 'wordcount'
+    ],
+    toolbar: 'undo redo | blocks | bold italic backcolor | ' +
+      'alignleft aligncenter alignright alignjustify | ' +
+      'bullist numlist outdent indent | removeformat | help'
+});
