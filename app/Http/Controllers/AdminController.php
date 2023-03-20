@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,8 +14,14 @@ class AdminController extends Controller
         foreach($teams as $team){
             $team->filename = url($team->filename);
         }
+        
+        $testimonials = Testimonial::orderBy('created_at', 'desc')->get();
+        foreach($testimonials as $testimonial){
+            $testimonial->filename = url($testimonial->filename);
+        }
         return view('admin.index', [
-            'teams' => $teams
+            'teams' => $teams,
+            'testimonials' => $testimonials
         ]);
     }
 

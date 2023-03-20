@@ -1,0 +1,84 @@
+<form class="testimonial_form" data-id="{{ $data_id }}">
+    @component('admin.components.forms.input')
+        @slot('input_label')
+            Name
+        @endslot
+        @slot('input_type')
+            text
+        @endslot
+        @slot('input_name')
+            name
+        @endslot
+        @slot('input_id')
+            testimonial_name
+        @endslot
+        @slot('input_placeholder')
+            Firstname Lastname
+        @endslot
+        @slot('input_value')
+            {{ $name_value }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.input')
+        @slot('input_label')
+            Position
+        @endslot
+        @slot('input_type')
+            text
+        @endslot
+        @slot('input_name')
+            position
+        @endslot
+        @slot('input_id')
+            testimonial_position
+        @endslot
+        @slot('input_placeholder')
+            Team Member's Position
+        @endslot
+        @slot('input_value')
+            {{ $position_value }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.textarea')
+        @slot('textarea_label')
+            Testimonial
+        @endslot
+        @slot('textarea_id')
+            testimonial
+        @endslot
+        @slot('textarea_name')
+            testimonial
+        @endslot
+        @slot('textarea_placeholder')
+            Testimonial
+        @endslot
+        @slot('textarea_rows')
+            3
+        @endslot
+        @slot('textarea_value')
+            {{ $testimonial_value }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.file_input')
+        @slot('input_label')
+            Photo
+        @endslot
+        @slot('input_id')
+            image_upload
+        @endslot
+        @slot('input_name')
+            file
+        @endslot
+        @slot('input_accept')
+            image/jpg, image/jpeg, image/png
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.submit')
+        @slot('submit_id')
+            team_submit
+        @endslot
+        @slot('submit_value')
+            Submit
+        @endslot
+    @endcomponent
+</form>

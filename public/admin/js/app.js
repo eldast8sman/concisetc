@@ -325,6 +325,109 @@ if(del_blog){
     }
 }
 
+var testimonial_forms = document.querySelectorAll(".testimonial_form");
+for(let i=0; i<testimonial_forms.length; i++){
+    var testimonial_form = testimonial_forms[i];
+
+    testimonial_form.onsubmit = function(e){
+        e.preventDefault();
+
+        var name = $("input#testimonial_name").val();
+        var position =$("input#testimonial_position").val();
+        var testimonial = $("textarea#testimonial").val();
+
+        if((name == "") || (position == "") || (testimonial == "")){
+            var error_message = "";
+            if(name == ""){
+                error_message += "Name must be provided! ";
+            }
+            if(position == ""){
+                error_message += "Position must be provided! ";
+            }
+            if(testimonial == ""){
+                error_message += "Testimonial must be provided"
+            }
+
+            toaster_error(error_message);
+            return false;
+        }
+
+        var data_id = e.target.dataset['id'];
+        if(data_id == ""){
+            var url = API_URL+"testimonials"
+        } else {
+            var url = API_URL+"testimonials/"+data_id;
+        }
+
+        toaster_success("Uploading Testimonial...");
+
+        var fd = new FormData(e.target);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: fd,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            headers: {
+                'x-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                "Authorization": "Bearer "+localStorage.getItem('token'),
+                "Accept": "application/json"
+            },
+            success: function(response){
+                if(response.status == "success"){
+                    window.location = BASE_URL+"dashboard";
+                } else {
+                    toaster_error(response.message);
+                }
+            },
+            error: function(response){
+                message = JSON.parse(response.responseText);
+                toaster_error(message.message);
+                console.log(message);
+            }
+        });
+    }
+}
+
+var testimonial_del_buttons = document.querySelectorAll(".delete_testimonial");
+for(let i=0; i<testimonial_del_buttons.length; i++){
+    del_button = testimonial_del_buttons[i];
+
+    del_button.onclick = function(e){
+        var test_id = e.target.dataset['id'];
+
+        $.ajax({
+            type: "DELETE",
+            url: API_URL+"testimonials/"+test_id,
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer "+localStorage.getItem('token'),
+                "Content-Type": "application/json"
+            },
+            success: function(response){
+                if(response.status == "success"){
+                    toaster_success("Deleting Testimonial...");
+
+                    function redirect(){
+                        window.location = BASE_URL+"dashboard";
+                    }
+
+                    setTimeout(redirect(), 2500);
+                } else {
+                    toaster_error(response.message);
+                }
+            },
+            error: function(response){
+                console.log(response.responseText);
+                message = JSON.parse(response.responseText);
+                toaster_error(message.message);
+            }
+        })
+    }
+}
+
 function toaster_error(error_message){
     toastr.error(error_message, "Error", {
         positionClass: "toast-top-right",

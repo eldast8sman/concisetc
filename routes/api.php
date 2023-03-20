@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +33,11 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::post('/teams', 'store');
         Route::post('/teams/{id}', 'update');
         Route::delete('/teams/{id}', 'destroy');
+    });
+
+    Route::controller(TestimonialController::class)->group(function(){
+        Route::post('/testimonials', 'store');
+        Route::post('/testimonials/{id}', 'update');
+        Route::delete('/testimonials/{id}', 'destroy');
     });
 });
