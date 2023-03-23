@@ -39,12 +39,12 @@
             </a>
           </li>
           <li class="nav-item me-2 mb-2 mb-lg-0">
-            <a class="nav-link" href="bloglist.html"><small>Blog</small></a>
+            <a class="nav-link" href="blogs"><small>Blog</small></a>
           </li>
           <li class="d-flex">
             <a href="contact.html" class="nav-link gradient_btn">
               <small>CONTACT</small>
-            </a href="contact.html">
+            </a>
           </li>
         </ul>
       </div>

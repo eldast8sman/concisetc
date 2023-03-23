@@ -118,14 +118,16 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-3 col-md-3 profile">
-        <img src="imgs/wecreate/1.png" alt="image of paris">
-        <div class="flex">
-          <h6 class="mt-3 ">Brandon Shaw</h6>
-          <p class="">founder & CEO</p>
+      @foreach ($teams as $team)
+        <div class="col-lg-3 col-md-3 profile">
+          <img src="{{ $team->filename }}" alt="{{ $team->name }} - {{ $team->position }}">
+          <div class="flex">
+            <h6 class="mt-3 ">{{ $team->name }}</h6>
+            <p class="">{{ $team->position }}</p>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3 profile">
+      @endforeach
+      {{-- <div class="col-lg-3 col-md-3 profile">
         <img src="imgs/wecreate/2.png" alt="image of paris">
         <div class="flex">
           <h6 class="mt-3 ">Brandon Shaw</h6>
@@ -145,7 +147,7 @@
           <h6 class="mt-3 ">Brandon Shaw</h6>
           <p class="">founder & CEO</p>
         </div>
-      </div>
+      </div> --}}
     </div>
 
     <div class="row">

@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::controller(PageController::class)->group(function(){
     Route::get('/', 'index');
     Route::get('/about-us', 'about');
+
+    Route::get('/blogs', 'blogs');
+    Route::get('/blogs/{slug}', 'blog');
 });
 
 Route::prefix('dashboard')->group(function(){
