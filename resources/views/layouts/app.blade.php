@@ -20,7 +20,7 @@
   <!---------------------------- NAVBAR ---------------------------->
   <nav class="navbar sticky-top navbar-expand-lg pro_nav">
     <div class="container-fluid">
-      <a class="navbar-brand me-auto logo_cont" href="#"><img src="imgs/logo.svg" alt="concise logo" /></a>
+      <a class="navbar-brand me-auto logo_cont" href="#"><img src="{{ asset('imgs/logo.svg') }}" alt="concise logo" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
   <!----------------------- Footer Section ---------------------------->
   <footer class="bd-footer py-4 py-md-5 footer_sect">
     <div class="container overflow-hidden">
-      <div class="mt-3 mb-4"><img src="imgs/logo.svg" alt="concise logo" /></div>
+      <div class="mt-3 mb-4"><img src="{{ asset('imgs/logo.svg') }}" alt="concise logo" /></div>
       <div class="row gx-5 footer_row">
         <div class="col-6 col-md-4 col-lg-2 mb-3">
           <div class="">
@@ -106,27 +106,27 @@
             <div class="row gy-2">
               <div class="col-2 col-md-4">
                 <a href="#" class="socials_cont">
-                  <img src="imgs/socials/linkedin.svg" alt="linkedin logo" />
+                  <img src="{{ asset('imgs/socials/linkedin.svg') }}" alt="linkedin logo" />
                 </a>
               </div>
               <div class="col-2 col-md-4">
                 <a href="#" class="socials_cont">
-                  <img src="imgs/socials/instagram.svg" alt="instagram logo" />
+                  <img src="{{ asset('imgs/socials/instagram.svg') }}" alt="instagram logo" />
                 </a>
               </div>
               <div class="col-2 col-md-4">
                 <a href="#" class="socials_cont">
-                  <img src="imgs/socials/facebook.svg" alt="facebook logo" />
+                  <img src="{{ asset('imgs/socials/facebook.svg') }}" alt="facebook logo" />
                 </a>
               </div>
               <div class="col-2 col-md-4">
                 <a href="#" class="socials_cont">
-                  <img src="imgs/socials/twitter.svg" alt="twitter logo" />
+                  <img src="{{ asset('imgs/socials/twitter.svg') }}" alt="twitter logo" />
                 </a>
               </div>
               <div class="col-4">
                 <a href="#" class="socials_cont">
-                  <img src="imgs/socials/youtube.svg" alt="youtube logo" />
+                  <img src="{{ asset('imgs/socials/youtube.svg') }}" alt="youtube logo" />
                 </a>
               </div>
             </div>
