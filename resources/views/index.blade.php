@@ -8,20 +8,22 @@
   <!---------------------------- HERO SECTION ---------------------------->
   <section class="py-0 py-md-5 hero_section">
     <div class="container-md py-5 text-center text-md-start">
-      <h1 class="display-4 hero_we">We Create</h1>
-      <h1 class="display-4 hero_simplified">Innovative Technology & Custom Software Solutions</h1>
-      <h1 class="display-4 hero_you">For Construction Business Excellence</h1>
-      <div class="row">
-        <p class="col col-md-6 text-center text-md-start my-3">
-            We're a B2B software solutions agency that's committed to helping the construction industry, school districts,
-            and government in building and deploying custom, best-of-breed software solutions to enhance processes and improve productivity.
-        </p>
-      </div>
-      <div class="mb-md-5">
-
-        <button class="mt-2 me-3 buttn">GET STARTED</button>
-        <button class="mt-2 gradient_btn gradient_btn_find">FIND OUT MORE</button>
-      </div>
+      <center>
+            {{-- <h1 class="display-4 hero_we">We Create</h1> --}}
+            <h1 class="display-4 hero_simplified col-md-10">Innovative Technology & Custom Software Solutions</h1>
+            {{-- <h1 class="display-4 hero_you">For Construction Business Excellence</h1> --}}
+            <div class="row">
+              <p class="col col-md-10 text-center text-md-start my-3 mx-auto" style="font-size: 20px">
+                  We're a B2B software solutions agency that's committed to helping the construction industry, school districts, logistics
+                  and government in building and deploying custom, best-of-breed software solutions to enhance processes and improve productivity.
+              </p>
+            </div>
+            <div class="mb-md-5">
+  
+              <button class="mt-2 me-3 buttn">GET STARTED</button>
+              <button class="mt-2 gradient_btn gradient_btn_find">FIND OUT MORE</button>
+            </div>
+      </center>
     </div>
   </section>
 

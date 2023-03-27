@@ -44,7 +44,7 @@
         <p>Latest Post</p>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="blogs">
 
       @foreach ($blogs as $blog)
       <a href="{{ env('APP_URL') }}/blogs/{{ $blog->slug }}"  class="col-lg-4 mb-5 flex-view">
@@ -67,6 +67,6 @@
   </div>
 
   <div class="container d-flex justify-content-center mt-5 mb-5 buttn-cont">
-    <button class="buttn">LOAD MORE</button>
+    <button class="buttn" id="load_blogs">LOAD MORE</button>
   </div>
 @endsection

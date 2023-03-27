@@ -10,6 +10,31 @@ use App\Http\Requests\UpdateBlogRequest;
 
 class BlogController extends Controller
 {
+    public function index(){
+        $offset = !empty($_GET['page']) ? (int)$_GET['page'] : 2;
+
+        $skip = (($offset - 1) * 2) + 1;
+
+        $today = date('Y-m-d');
+
+        $blogs = Blog::where('publication_date', '<=', $today)->orderBy('publication_date', 'desc')->skip($skip)->take(2);
+        if($blogs->count() > 0){
+            return response([
+                'status' => 'success',
+                'message' => 'Blogposts successfully fetched',
+                'data' => $blogs->get()
+            ], 200);
+        } else {
+            return response([
+                'status' => 'failed',
+                'message' => 'No more Blogposts',
+                'data' => [
+                    'skip' => $skip
+                ]
+            ], 404);
+        }
+    }
+
     public function store(StoreBlogRequest $request){
         $all = $request->except(['file']);
         if($upload_image = FileController::uploadFile($request->file, 'blog')){
