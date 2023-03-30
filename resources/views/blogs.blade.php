@@ -69,4 +69,7 @@
   <div class="container d-flex justify-content-center mt-5 mb-5 buttn-cont">
     <button class="buttn" id="load_blogs">LOAD MORE</button>
   </div>
+  @component('components.scale')
+      
+  @endcomponent
 @endsection

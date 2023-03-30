@@ -58,4 +58,8 @@ class PageController extends Controller
             'blogs' => $blogs 
         ]);
     }
+
+    public function contact(){
+        return view('contact');
+    }
 }

@@ -359,4 +359,8 @@
       </div>
     </div>
   </section>
+
+  @component('components.scale')
+      
+  @endcomponent
 @endsection

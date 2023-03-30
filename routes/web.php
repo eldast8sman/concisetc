@@ -21,6 +21,8 @@ Route::controller(PageController::class)->group(function(){
 
     Route::get('/blogs', 'blogs');
     Route::get('/blogs/{slug}', 'blog');
+
+    Route::get('/contact-us', 'contact');
 });
 
 Route::prefix('dashboard')->group(function(){

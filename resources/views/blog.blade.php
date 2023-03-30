@@ -105,4 +105,7 @@
     </div>
 
   </div>
+  @component('components.scale')
+      
+  @endcomponent
 @endsection

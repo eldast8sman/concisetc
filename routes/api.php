@@ -42,3 +42,5 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::delete('/testimonials/{id}', 'destroy');
     });
 });
+
+Route::post('/send_message', [AuthController::class, 'send_message']);

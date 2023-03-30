@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\SendMessageRequest;
 
 class AuthController extends Controller
 {
@@ -138,5 +141,9 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Logout successful'
         ], 200);
+    }
+
+    public function send_message(SendMessageRequest $request){
+        Mail::to("info@concise.cfcing.org")->send(new ContactMail($request->email, $request->name, $request->intesrest, $request->message));
     }
 }
