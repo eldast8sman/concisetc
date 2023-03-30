@@ -24,6 +24,7 @@ class StoreTeamRequest extends FormRequest
         return [
             'name' => 'required|string',
             'position' => 'required|string',
+            'bio' => 'required|text',
             'file' => 'required|mimes:png,jpg,jpeg|max:2048'
         ];
     }

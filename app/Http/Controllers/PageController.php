@@ -30,7 +30,7 @@ class PageController extends Controller
             $first_blog->publication_date = date("F d Y", strtotime($first_blog->publication_date));
         }
 
-        $blogs = Blog::where('publication_date', '<=', $today)->orderBy('publication_date', 'desc')->skip(1)->limit(2)->get();
+        $blogs = Blog::where('publication_date', '<=', $today)->orderBy('publication_date', 'desc')->skip(1)->limit(9)->get();
         foreach($blogs as $blog){
             $blog->filename = url($blog->filename);
             $blog->publication_date = date("F d Y", strtotime($blog->publication_date));

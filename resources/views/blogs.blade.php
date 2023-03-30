@@ -45,7 +45,7 @@
       </div>
     </div>
     <div class="row" id="blogs">
-
+      <input type="hidden" id="page" value="2">
       @foreach ($blogs as $blog)
       <a href="{{ env('APP_URL') }}/blogs/{{ $blog->slug }}"  class="col-lg-4 mb-5 flex-view">
         <div style="

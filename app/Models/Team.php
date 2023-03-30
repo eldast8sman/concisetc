@@ -10,6 +10,6 @@ class Team extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'position', 'filename'
+        'name', 'position', 'bio', 'filename'
     ];
 }

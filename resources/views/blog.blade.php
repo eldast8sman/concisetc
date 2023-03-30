@@ -73,7 +73,15 @@
 
         @foreach ($blogs as $oblog)
             <div class="flex-view mb-4">
-                <img class=" mt-1" src="{{ $oblog->filename }}" alt="{{ $oblog->title }}" style="height:auto">
+                <div class="col-12" style="
+                  background-image: url({{ $oblog->filename }});
+                  background-size: contain;
+                  background-position: center center;
+                  background-repeat: no-repeat;
+                  height:200px
+                ">
+                  <img class=" mt-1" src="{{ $oblog->filename }}" alt="{{ $oblog->title }}" height="200px" style="opacity: 0">
+                </div>
                 <div class="ms-2 area">
                 <p class="date mt-3 -2">{{ $oblog->publication_date }}</p>
                 <h3 class="head" style="height:auto">{{ $oblog->title }}</h3>

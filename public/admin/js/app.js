@@ -94,14 +94,18 @@ for(let i=0; i < team_forms.length; i++){
 
         var name = $("input#team_name").val();
         var position = $("input#team_position").val();
+        var bio = $("textarea#team_bio").val();
 
-        if((name == "") || (position == "")){
+        if((name == "") || (position == "") || (bio == "")){
             var error_message = "";
             if(name == ""){
                 error_message += "Name must be provided! ";
             }
             if(position == ""){
                 error_message += "Position must be provided! ";
+            }
+            if(bio == ""){
+                error_message += "Bio must be provided! ";
             }
             toaster_error(error_message);
             return false;

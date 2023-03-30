@@ -45,6 +45,9 @@
                                                             <tr>
                                                                 <td><strong>Position: </strong></td><td>{{ $team->position }}</td>
                                                             </tr>
+                                                            <tr>
+                                                                <td><strong>Bio</strong></td><td>{{ $team->bio }}</td>
+                                                            </tr>
                                                         </table>
                                                     </p>
                                                     <p class="col-12">
@@ -69,6 +72,9 @@
                                                                     @endslot
                                                                     @slot('position_value')
                                                                         {{ $team->position }}
+                                                                    @endslot
+                                                                    @slot('bio_value')
+                                                                        {{ $team->bio }}
                                                                     @endslot
                                                                 @endcomponent
                                                             </div>
@@ -112,6 +118,9 @@
                                                     
                                                 @endslot
                                                 @slot('position_value')
+                                                    
+                                                @endslot
+                                                @slot('bio_value')
                                                     
                                                 @endslot
                                             @endcomponent

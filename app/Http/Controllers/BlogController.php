@@ -13,24 +13,21 @@ class BlogController extends Controller
     public function index(){
         $offset = !empty($_GET['page']) ? (int)$_GET['page'] : 2;
 
-        $skip = (($offset - 1) * 2) + 1;
+        $skip = (($offset - 1) * 9) + 1;
 
         $today = date('Y-m-d');
 
-        $blogs = Blog::where('publication_date', '<=', $today)->orderBy('publication_date', 'desc')->skip($skip)->take(2);
-        if($blogs->count() > 0){
+        $blogs = Blog::where('publication_date', '<=', $today)->orderBy('publication_date', 'desc')->skip($skip)->take(9)->get();
+        if(!empty($blogs)){
             return response([
                 'status' => 'success',
                 'message' => 'Blogposts successfully fetched',
-                'data' => $blogs->get()
+                'data' => $blogs
             ], 200);
         } else {
             return response([
                 'status' => 'failed',
-                'message' => 'No more Blogposts',
-                'data' => [
-                    'skip' => $skip
-                ]
+                'message' => 'No more Blogposts'
             ], 404);
         }
     }

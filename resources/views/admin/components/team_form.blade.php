@@ -39,6 +39,26 @@
             {{ $position_value }}
         @endslot
     @endcomponent
+    @component('admin.components.forms.textarea')
+        @slot('textarea_label')
+            Short Bio
+        @endslot
+        @slot('textarea_id')
+            team_bio
+        @endslot
+        @slot('textarea_name')
+            bio
+        @endslot
+        @slot('textarea_placeholder')
+            Short Bio
+        @endslot
+        @slot('textarea_rows')
+            3
+        @endslot
+        @slot('textarea_value')
+            {{ $bio_value }}
+        @endslot
+    @endcomponent
     @component('admin.components.forms.file_input')
         @slot('input_label')
             Photo

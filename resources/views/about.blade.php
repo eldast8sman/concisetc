@@ -48,13 +48,13 @@
   <div class="bg2">
     <div class="container contt">
       <div class="row">
-        <div class="col-lg-10 we-create mt-5">
+        <div class="col-lg-10 we-create mt-5" style="height: auto !important">
           <h1>
             Who <span>We</span> Are
           </h1>
           <p style="font-size: 20px">
             Think Digital - Building Automated, Real-Time Systems, <span>Custom Innovative Software</span> for Contractors
-        </p>
+          </p>
           <p>
             Concise Software Solutions is not your regular B2B software company. As a B2B Software solutions agency, we develop custom software solutions for businesses in the construction industry.
             We Partner with brands that share the same mindset of innovation, allowing us to design products and services that will help them scale their business.
@@ -120,10 +120,17 @@
     <div class="row">
       @foreach ($teams as $team)
         <div class="col-lg-3 col-md-3 profile">
-          <img src="{{ $team->filename }}" alt="{{ $team->name }} - {{ $team->position }}">
+          <div class="col-12 rounded" style="height: 345px;
+                                            background-image: url({{ $team->filename }});
+                                            background-size: contain;
+                                            background-position: center center;
+                                            background-repeat: no-repeat">
+            {{-- <img src="{{ $team->filename }}" alt="{{ $team->name }} - {{ $team->position }}"> --}}
+          </div>
           <div class="flex">
             <h6 class="mt-3 ">{{ $team->name }}</h6>
             <p class="">{{ $team->position }}</p>
+            <p style="font-family:Manrope; font-size:16px;line-height:22px">{{ $team->bio }}</p>
           </div>
         </div>
       @endforeach
@@ -150,7 +157,7 @@
       </div> --}}
     </div>
 
-    <div class="row">
+    {{-- <div class="row">
       <div class="col-lg-3 col-md-3 profile">
         <img src="imgs/wecreate/5.png" alt="image of paris">
         <div class="flex">
@@ -179,7 +186,7 @@
           <p class="">founder & CEO</p>
         </div>
       </div>
-    </div>
+    </div> --}}
 
 
   </div>

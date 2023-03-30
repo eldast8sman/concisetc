@@ -8,7 +8,7 @@ if($("button#load_blogs")){
         $(".error_msg").remove();
         $.ajax({
             type: "GET",
-            url: API_URL+"blogs",
+            url: API_URL+"blogs?page="+page,
             headers: {
                 "Accept": "application/json"
             },

@@ -11,6 +11,7 @@
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
   <!-- Project CSS -->
+  @yield('other_css')
   <link rel="stylesheet" href="{{ asset("css/style.css") }}" />
   <link rel="stylesheet" href="{{ asset("css/general.css") }}" />
   <title>Concise || @yield('title')</title>
@@ -28,10 +29,10 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="about-us"><small>About</small></a>
+            <a class="nav-link" aria-current="page" href="{{ env('APP_URL') }}/about-us"><small>About</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services"><small>Services</small></a>
+            <a class="nav-link" href="{{ env('APP_URL') }}#services"><small>Services</small></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="projectscreen1.html">
@@ -39,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item me-2 mb-2 mb-lg-0">
-            <a class="nav-link" href="blogs"><small>Blog</small></a>
+            <a class="nav-link" href="{{ env('APP_URL') }}/blogs"><small>Blog</small></a>
           </li>
           <li class="d-flex">
             <a href="contact.html" class="nav-link gradient_btn">
