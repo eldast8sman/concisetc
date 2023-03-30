@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\WorkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,15 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::post('/testimonials', 'store');
         Route::post('/testimonials/{id}', 'update');
         Route::delete('/testimonials/{id}', 'destroy');
+    });
+
+    Route::controller(WorkController::class)->group(function(){
+        Route::post('/works', 'store');
+        Route::put('/works/{id}', 'update');
+        Route::post('/works/images', 'add_file');
+        Route::post('/works/images/{id}', 'change_file');
+        Route::delete('/works/images/{id}', 'destroy_file');
+        Route::delete('/works/{id}', 'destroy');
     });
 });
 
