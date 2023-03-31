@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Team;
+use App\Models\Work;
 use App\Models\Testimonial;
+use App\Models\WorkImage;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -48,6 +50,31 @@ class AdminController extends Controller
 
         return view('admin.blog', [
             'blog' => $blog
+        ]);
+    }
+
+    public function projects(){
+        $projects = Work::orderBy('created_at', 'desc')->paginate(30);
+        foreach($projects as $project){
+            $image = WorkImage::where('work_id', $project->id)->first();
+            if(!empty($image)){
+                $project->filename = url($image->filename);
+            } else {
+                $project->filename = "";
+            }
+        }
+
+        return view('admin.works', [
+            'projects' => $projects
+        ]);
+    }
+
+    public function project($slug){
+        $project = Work::where('slug', $slug)->first();
+        $project->filename = url($project->filename);
+
+        return view('admin.work', [
+            'project' => $project
         ]);
     }
 }

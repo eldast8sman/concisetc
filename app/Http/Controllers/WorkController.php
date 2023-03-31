@@ -12,12 +12,28 @@ use Illuminate\Http\Request;
 class WorkController extends Controller
 {
     public function store(StoreTeamRequest $request){
-        if($work = Work::create($request->all())){
-            return response([
-                'status' => 'success',
-                'message' => 'Work successfully uploaded',
-                'data' => $work
-            ], 200);
+        $all = $request->except(['file']);
+        if($work = Work::create($all)){
+            $uploaded_image = FileController::uploadFile($request->file, 'work');
+            if($uploaded_image){
+                $img = [
+                    'work_id' => $work->id,
+                    'filename' => 'img/work/'.$uploaded_image
+                ];
+                WorkImage::create($img);
+
+                return response([
+                    'status' => 'success',
+                    'message' => 'Work successfully uploaded',
+                    'data' => $work
+                ], 200);
+            } else {
+                $work->delete();
+                return response([
+                    'status' => 'failed',
+                    'message' => 'Image was not uploaded'
+                ]);
+            }
         } else {
             return response([
                 'status' => 'failed',

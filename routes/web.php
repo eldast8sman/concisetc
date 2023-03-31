@@ -33,5 +33,8 @@ Route::prefix('dashboard')->group(function(){
 
         Route::get('/blogs', 'blogs');
         Route::get('/blogs/{slug}', 'blog');
+
+        Route::get('/projects', 'projects');
+        Route::get('/projects/{slug}', 'project');
     });
 });

@@ -112,7 +112,8 @@
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first">Main Menu</li>
                     <li><a href="../">Home</a></li>
-                    <li><a href="../events">Events</a></li>
+                    <li><a href="../blogs">Blogs</a></li>
+                    <li><a href="../projects">Projects</a></li>
                     {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                         <ul aria-expanded="false">

@@ -27,7 +27,8 @@ class StoreWorkRequest extends FormRequest
             'problem' => 'required|string',
             'solution' => 'required|string',
             'conclusion' => 'required|string',
-            'tags' => 'required|string'
+            'tags' => 'required|string',
+            'file' => 'required|mimes:png,jpg,jpeg|max:2048'
         ];
     }
 }
