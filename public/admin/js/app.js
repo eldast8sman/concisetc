@@ -177,8 +177,9 @@ for(let i=0; i<team_del_buttons.length; i++){
                 }
             },
             error: function(response){
-                console.log(response.responseText);
-                toaster_error(response.responseText);
+                var message = JSON.parse(response.responseText);
+                console.log(message.message);
+                toaster_error(message);
             }
         })
     }
@@ -427,6 +428,215 @@ for(let i=0; i<testimonial_del_buttons.length; i++){
                 console.log(response.responseText);
                 message = JSON.parse(response.responseText);
                 toaster_error(message.message);
+            }
+        })
+    }
+}
+
+$("form.work_form").submit(function(e){
+    e.preventDefault();
+
+    var title = $("input#work_title").val();
+    var summary = $("textarea#work_summary").val();
+    var problem = $("textarea#work_problem").val();
+    var solution = $("textarea#work_solution").val();
+    var conclusion = $("textarea#work_conclusion").val();
+    var url = $("input#work_url").val();
+    var tags = $("textarea#work_tags").val();
+    var data_id = e.target.dataset['id'];
+
+    if((title == "") || (summary == "") || (problem == "") || (solution == "") || (conclusion == "") || (url == "") || (tags == "")){
+        var error_message = "";
+        if(title == ""){
+            error_meaage += "Project Title must be provided! ";
+        }
+        if(summary == ""){
+            error_message += "Project Summary must be provided! ";
+        }
+        if(problem == ""){
+            error_message += "Problem must be stated! ";
+        }
+        if(solution == ""){
+            error_message += "Solution must be stated! ";
+        }
+        if(conclusion == ""){
+            error_message += "Conclusion must be provided! ";
+        }
+        if(url == ""){
+            error_message += "Project's URL must be provided! ";
+        }
+        if(tags == ""){
+            error_message += "Project Tags must be provided! ";
+        }
+        toaster_error(error_message);
+        return false;
+    }
+
+    if(data_id == ""){
+        var image_files = $('#image_upload')[0].files;
+        if(image_files.length < 1){
+            toaster_error("Blog Photo must be uploaded!");
+            return false;
+        } else {
+            var image_file = image_files[0].type;
+            if((image_file != "image/jpg") && (image_file != "image/jpeg") && (image_file != "image/png")){
+                toaster_error("Wrong Image Filetype");
+                return false;
+            }
+        }
+
+        url = API_URL+"works";
+        method = "POST";
+    } else {
+        url = API_URL+"works/"+data_id;
+        method = "PUT";
+    }
+
+    var fd = new FormData(document.querySelector(".work_form"));
+    toaster_success("Uploading Project...")
+    $.ajax({
+        type: method,
+        url: url,
+        data: fd,
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            "Authorization": "Bearer "+localStorage.getItem('token'),
+            "Accept": "application/json"
+        },
+        success: function(response){
+            toaster_success(response.message);
+            if(data_id == ""){
+                window.location= ADMIN_URL+"projects"
+            } else {
+                window.location = ADMIN_URL+"projects/"+response.data.slug;
+            }
+        },
+        error: function(response){
+            message = JSON.parse(response.responseText);
+            toaster_error(message.message);
+            console.log(message);
+        }
+    })
+});
+
+var del_work = document.querySelector("#delete_work");
+if(del_work){
+    del_work.onclick = function(e){
+        var work_id = e.target.dataset['id'];
+
+        $.ajax({
+            type: "DELETE",
+            url: API_URL+"works/"+work_id,
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer "+localStorage.getItem('token'),
+                "Content-Type": "application/json",
+                "Acceppt": "application/json"
+            },
+            success: function(response){
+                if(response.status == "success"){
+                    toaster_success(response.message);
+    
+                    window.location = ADMIN_URL+"projects";
+                } else {
+                    toaster_error(response.message);
+                }
+            },
+            error: function(response){
+                message = JSON.parse(response.responseText);
+                toaster_error(message.message);
+                console.log(message);
+            }
+        })
+    }
+}
+
+var image_forms = document.querySelectorAll(".work_image_form");
+for(let i=0; i<image_forms.length; i++){
+    var image_form = image_forms[i];
+    var data_id = e.target.dataset['id'];
+
+    image_form.onsubmit = function(e){
+        e.preventDefault();
+
+        var image_files = $('#image_upload')[0].files;
+        var data_id = e.target.dataset['id'];
+        var work_id = $("input#work_id").val();
+
+        if(image_files.length < 1){
+            toaster_error("No Photo must be uploaded");
+            return false;
+        } else {
+            var image_file = image_files[0].type;
+            if((image_file != "image/jpg") && (image_file != "image/jpeg") && (image_file != "image/png")){
+                toaster_error("Wrong Image Filetype");
+                return false;
+            }
+        }
+
+        if(data_id == ""){
+            var url = API_URL+"works/images";
+        } else {
+            var url = API_URL+"works/images/"+data_id;
+        }
+
+        var fd = new FormDataEvent(document.querySelector(".work_image_form"));
+        toaster_success("Uploading Photo...");
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: fd,
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                "Authorization": "Bearer "+localStorage.getItem('token'),
+                "Accept": "application/json"
+            },
+            success: function(response){
+                toaster_success("Upload successful");
+                window.location = ADMIN_URL+"projects/"+work_id;
+            },
+            error: function(response){
+                var message = JSON.parse(response.responseText);
+                toaster_error(message.message);
+                console.log(message);
+            }
+        })
+    }
+}
+
+var image_del_buttons = document.querySelectorAll(".delete_workImage");
+for(let i=0; i<image_del_buttons.length; i++){
+    del_button = image_del_buttons[i];
+
+    de_button.onclick = function(e){
+        var image_id = e.target.dataset['id'];
+
+        $.ajax({
+            type: "DELETE",
+            url: API_URL+"works/images/"+image_id,
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer "+localStorage.getItem('token'),
+                "Content-Type": "application/json"
+            },
+            success: function(response){
+                toaster_success("Deleting Image...");
+                function redirect(){
+                    window.location = ADMIN_URL+"projects/"+response.data.work_id;
+                }
+
+                setTimeout(redirect(), 2500);
+            },
+            error: function(response){
+                var message = JSON.parse(response.responseText);
+                console.log(message.message);
+                toaster_error(message);
             }
         })
     }

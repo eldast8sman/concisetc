@@ -71,7 +71,11 @@ class AdminController extends Controller
 
     public function project($slug){
         $project = Work::where('slug', $slug)->first();
-        $project->filename = url($project->filename);
+        $images = WorkImage::where('work_id', $project->id)->get();
+        foreach($images as $image){
+            $image->filename = url($image->filename);
+        }
+        $project->images = $images;
 
         return view('admin.work', [
             'project' => $project
