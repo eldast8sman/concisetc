@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use App\Models\Team;
+use App\Models\Work;
+use App\Models\WorkImage;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -61,5 +63,55 @@ class PageController extends Controller
 
     public function contact(){
         return view('contact');
+    }
+
+    public function projects(){
+        $sort = !empty($_GET['filter']) ? (string)$_GET['filter'] : "";
+        if(!empty($sort)){
+            $projects = [];
+
+            $works = Work::orderBy('created_at', 'desc')->get();
+            foreach($works as $work){
+                $tags = explode(',', $work->tags);
+                foreach($tags as $tag){
+                    $tag = trim($tag);
+                }
+
+                if(in_array($sort, $tags)){
+                    $projects[] = $work;
+                }
+            }
+
+            $projects = self::paginate_array($projects);
+
+        } else {
+            $projects = Work::orderBy('created_at', 'desc')->paginate(10);
+            foreach($projects as $project){
+                $image = WorkImage::where('work_id', $project->id)->first();
+                if(!empty($image)){
+                    $project->filename = url($image->filename);
+                } else {
+                    $project->filename = "";
+                }
+            }
+        }
+
+        $filters = [];
+        $all = Work::all();
+        foreach($all as $single){
+            $links = explode(',', $single->tags);
+            foreach($links as $link){
+                $link = trim($link);
+
+                if(!in_array($link, $filters)){
+                    $filters[] = $link;
+                }
+            }
+        }
+
+        return view('projects', [
+            'projects' => $projects,
+            'filters' => $filters
+        ]);
     }
 }

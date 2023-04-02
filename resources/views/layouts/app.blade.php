@@ -35,7 +35,7 @@
             <a class="nav-link" href="{{ env('APP_URL') }}#services"><small>Services</small></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projectscreen1.html">
+            <a class="nav-link" href="{{ env('APP_URL') }}/our-work">
               <small> Our Work</small>
             </a>
           </li>

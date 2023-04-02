@@ -22,6 +22,8 @@ Route::controller(PageController::class)->group(function(){
     Route::get('/blogs', 'blogs');
     Route::get('/blogs/{slug}', 'blog');
 
+    Route::get('/our-work', 'projects');
+
     Route::get('/contact-us', 'contact');
 });
 
