@@ -475,7 +475,7 @@ $("form.work_form").submit(function(e){
     if(data_id == ""){
         var image_files = $('#image_upload')[0].files;
         if(image_files.length < 1){
-            toaster_error("Blog Photo must be uploaded!");
+            toaster_error("Project Photo must be uploaded!");
             return false;
         } else {
             var image_file = image_files[0].type;
@@ -557,25 +557,14 @@ if(del_work){
 var image_forms = document.querySelectorAll(".work_image_form");
 for(let i=0; i<image_forms.length; i++){
     var image_form = image_forms[i];
-    var data_id = e.target.dataset['id'];
 
     image_form.onsubmit = function(e){
         e.preventDefault();
 
-        var image_files = $('#image_upload')[0].files;
-        var data_id = e.target.dataset['id'];
         var work_id = $("input#work_id").val();
+        var data_id = e.target.dataset['id'];
 
-        if(image_files.length < 1){
-            toaster_error("No Photo must be uploaded");
-            return false;
-        } else {
-            var image_file = image_files[0].type;
-            if((image_file != "image/jpg") && (image_file != "image/jpeg") && (image_file != "image/png")){
-                toaster_error("Wrong Image Filetype");
-                return false;
-            }
-        }
+       
 
         if(data_id == ""){
             var url = API_URL+"works/images";
@@ -583,8 +572,8 @@ for(let i=0; i<image_forms.length; i++){
             var url = API_URL+"works/images/"+data_id;
         }
 
-        var fd = new FormDataEvent(document.querySelector(".work_image_form"));
-        toaster_success("Uploading Photo...");
+        toaster_success("Uploading Image...")
+        var fd = new FormData(e.target);
         $.ajax({
             type: "POST",
             url: url,
@@ -599,7 +588,7 @@ for(let i=0; i<image_forms.length; i++){
             },
             success: function(response){
                 toaster_success("Upload successful");
-                window.location = ADMIN_URL+"projects/"+work_id;
+                window.location = ADMIN_URL+"projects/"+response.data.slug;
             },
             error: function(response){
                 var message = JSON.parse(response.responseText);
@@ -614,7 +603,7 @@ var image_del_buttons = document.querySelectorAll(".delete_workImage");
 for(let i=0; i<image_del_buttons.length; i++){
     del_button = image_del_buttons[i];
 
-    de_button.onclick = function(e){
+    del_button.onclick = function(e){
         var image_id = e.target.dataset['id'];
 
         $.ajax({
@@ -628,7 +617,7 @@ for(let i=0; i<image_del_buttons.length; i++){
             success: function(response){
                 toaster_success("Deleting Image...");
                 function redirect(){
-                    window.location = ADMIN_URL+"projects/"+response.data.work_id;
+                    window.location = ADMIN_URL+"projects/"+response.data.slug;
                 }
 
                 setTimeout(redirect(), 2500);

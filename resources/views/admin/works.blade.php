@@ -39,7 +39,7 @@
                                                 @slot('body')
                                                     <div style="
                                                         height: 200px;
-                                                        background-image: url({{ $blog->filename }});
+                                                        background-image: url({{ $project->filename }});
                                                         background-repeat: no-repeat;
                                                         background-size: contain;
                                                         background-position: center center;

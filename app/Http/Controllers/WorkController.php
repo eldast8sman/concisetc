@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AddImageToWorkRequest;
-use App\Http\Requests\ChangeWorkImageRequest;
-use App\Http\Requests\StoreTeamRequest;
 use App\Models\Work;
 use App\Models\WorkImage;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreWorkRequest;
+use App\Http\Requests\UpdateWorkRequest;
+use App\Http\Requests\AddImageToWorkRequest;
+use App\Http\Requests\ChangeWorkImageRequest;
 
 class WorkController extends Controller
 {
-    public function store(StoreTeamRequest $request){
+    public function store(StoreWorkRequest $request){
         $all = $request->except(['file']);
         if($work = Work::create($all)){
             $uploaded_image = FileController::uploadFile($request->file, 'work');
@@ -42,7 +43,7 @@ class WorkController extends Controller
         }
     }
 
-    public function update(StoreTeamRequest $request, $id){
+    public function update(UpdateWorkRequest $request, $id){
         if(!empty($work = Work::find($id))){
             $all = $request->all();
             if($work->update($all)){
@@ -72,6 +73,8 @@ class WorkController extends Controller
             $all['filename'] = 'img/work/'.$upload_image;
 
             if($image = WorkImage::create($all)){
+                $work = Work::find($image->work_id);
+                $image->slug = $work->slug;
                 return response([
                     'status' => 'success',
                     'message' => 'Work Image successfully Uploaded',
@@ -101,6 +104,9 @@ class WorkController extends Controller
                 $image->filename = 'img/work/'.$uploaded_image;
                 $image->save();
 
+                $work = Work::find($image->work_id);
+                $image->slug = $work->slug;
+
                 FileController::delete_file($old_path);
 
                 return response([
@@ -128,6 +134,8 @@ class WorkController extends Controller
             $image->delete();
 
             FileController::delete_file($image->filename);
+            $work = Work::find($image->work_id);
+            $image->slug = $work->slug;
 
             return response([
                 'status' => 'failed',
