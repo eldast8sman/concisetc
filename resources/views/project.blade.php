@@ -37,6 +37,28 @@
     </div>
   </section>
 
+  <div class="container bloglist mt-5">
+    <div class="row">
+      <div class="col-lg-12 bloglist-head">
+        <p>Project Images</p>
+      </div>
+    </div>
+    <div class="row popup-gallery" id="blogs">
+      @foreach ($images as $image)
+        <a href="{{ $image->filename }}" title="{{ $project->title }} Image" class="col-lg-4 mb-5 flex-view">
+            <div style="
+            background-image: url({{ $image->filename }});
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center
+            "><img src="{{ $image->filename }}" alt="" height="250px" style="opacity: 0"></div>
+            <div class="flex">
+            </div>
+        </a>
+      @endforeach
+    </div>
+  </div>
+
   <section class="py-5 conclusion_section">
     <div class="container p-3 p-lg-5 conclusion_gradient_cont">
       <h4 class="mb-3 text-white">Conclusion and Next Steps</h4>

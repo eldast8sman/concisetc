@@ -118,8 +118,14 @@ class PageController extends Controller
     public function project($slug){
         $project = Work::where('slug', $slug)->first();
 
+        $images = WorkImage::where('work_id', $project->id)->get();
+        foreach($images as $image){
+            $image->filename = url($image->filename);
+        }
+
         return view('project', [
-            'project' => $project
+            'project' => $project,
+            'images' => $images
         ]);
     }
 }
