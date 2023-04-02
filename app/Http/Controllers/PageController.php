@@ -114,4 +114,12 @@ class PageController extends Controller
             'filters' => $filters
         ]);
     }
+
+    public function project($slug){
+        $project = Work::where('slug', $slug)->first();
+
+        return view('project', [
+            'project' => $project
+        ]);
+    }
 }

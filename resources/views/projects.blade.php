@@ -5,7 +5,7 @@
 @endsection
 
 @section('other_css')
-    <link rel="stylesheet" href="css/projectscreen1.css" />
+    <link rel="stylesheet" href="{{ asset('css/projectscreen1.css') }}" />
 @endsection
 
 @section('content')
@@ -52,6 +52,10 @@
     </div>
   </section>
 
+  <!-------------------- GRAPH SECTION ----------------------->
+  <section class="graph_section">
+    </section>
+
   <!-------------------- TAGS SECTION ----------------------->
   <section class="pt-5 tags_section" id="work_tags">
     <div class="container-lg d-flex flex-column flex-md-row text-md-center align-items-md-center">
@@ -68,6 +72,32 @@
                 <a class="tags_a" href="{{ env('APP_URL') }}/our-work?filter={{ $filter }}#work_tags">{{ $filter }}</a>
             @endif
         @endforeach
+    </div>
+  </section>
+
+  <!-------------------- WORKS SECTION ----------------------->
+  <section class="py-5 works_section" id="works">
+    <div class="container-lg">
+      <div class="row justify-content-center g-3">
+        @foreach ($projects as $project)
+        <div class="col-12 col-md-6">
+            <a href="{{ env('APP_URL') }}/our-work/{{ $project->slug }}"  class="card border-0">
+              <div class="w-100 works_img_cont works_img_cont1" style="
+                    background-image: url({{ $project->filename }});
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                "></div>
+              <div class="card-body ps-0">
+                <h5 class="card-title">{{ $project->title }}</h5>
+                <p class="card-text project_desc">
+                  {{ $project->summary }}
+                </p>
+              </div>
+            </a>
+          </div>    
+        @endforeach
+      </div>
     </div>
   </section>
 

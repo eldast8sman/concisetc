@@ -23,6 +23,7 @@ Route::controller(PageController::class)->group(function(){
     Route::get('/blogs/{slug}', 'blog');
 
     Route::get('/our-work', 'projects');
+    Route::get('/our-work/{slug}', 'project');
 
     Route::get('/contact-us', 'contact');
 });
