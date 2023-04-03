@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\WorkController;
@@ -50,6 +51,12 @@ Route::middleware('auth:sanctum')->group(function(){
         Route::post('/works/images/{id}', 'change_file');
         Route::delete('/works/images/{id}', 'destroy_file');
         Route::delete('/works/{id}', 'destroy');
+    });
+
+    Route::controller(ServiceController::class)->group(function(){
+        Route::post('/services', 'store');
+        Route::post('/services/{id}', 'update');
+        Route::delete('/services/{id}', 'destroy');
     });
 });
 

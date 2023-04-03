@@ -330,6 +330,113 @@ if(del_blog){
     }
 }
 
+$("form.service_form").submit(function(e){
+    e.preventDefault();
+
+    var title = $("input#service_title").val();
+    var summary = $("textarea#service_summary").val();
+    var content = $("textarea#service_content").val();
+    var solution = $("textarea#service_solution").val();
+    var image_files = $("#image_upload")[0].files;
+    var data_id = e.target.dataset['id'];
+
+    if((title == "") || (summary == "") || (content == "") || (solution == "")){
+        error_message = "";
+        if(title == ""){
+            error_message += "Service must be stated";
+        }
+        if(summary == ""){
+            error_message += "Service Summary must be provided";
+        }
+        if(content == ""){
+            error_message += "Service Content must be provided";
+        }
+        if(solution == ""){
+            error_message += "Service Solution must be provided";
+        }
+        return false;
+    }
+
+    if(image_files.length > 0){
+        image_file = image_files[0].type;
+        if((image_file != "image/jpg") && (image_file != "image/jpeg") && (image_file != "image/png")){
+            toaster_error("Wrong Image Filetype");
+            return false;
+        }
+    }
+    
+    if(data_id == ""){
+        var url = API_URL+"services";
+    } else {
+        var url = API_URL+"services/"+data_id;
+    }
+
+    var fd = new FormData(document.querySelector(".service_form"));
+    toaster_success("Service Uploading...");
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: fd,
+        dataType: "json",
+        processData: false,
+        contentType: false,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            "Authorization": "Bearer "+localStorage.getItem('token'),
+            "Accept": "application/json"
+        },
+        success: function(response){
+            if(response.status == "success"){
+                toaster_success(response.message);
+                if(data_id == ""){
+                    window.location= ADMIN_URL+"services"
+                } else {
+                    window.location = ADMIN_URL+"services/"+response.data.slug
+                }
+            } else {
+                toaster_error(response.message);
+            }
+        },
+        error: function(response){
+            message = JSON.parse(response.responseText);
+            toaster_error(message.message);
+            console.log(message);
+        }
+    })
+});
+
+var del_service = document.querySelector("#delete_service");
+if(del_service){
+    del_service.onclick = function(e){
+        var service_id = e.target.dataset['id'];
+
+        $.ajax({
+            type: "DELETE",
+            url: API_URL+"blogs/"+service_id,
+            dataType: "json",
+            headers: {
+                "Authorization": "Bearer "+localStorage.getItem('token'),
+                "Content-Type": "application/json",
+                "Acceppt": "application/json"
+            },
+            success: function(response){
+                if(response.status == "success"){
+                    toaster_success(response.message);
+    
+                    window.location = ADMIN_URL+"services";
+                } else {
+                    toaster_error(response.message);
+                }
+            },
+            error: function(response){
+                message = JSON.parse(response.responseText);
+                toaster_error(message.message);
+                console.log(message);
+            }
+        })
+    }
+}
+
 var testimonial_forms = document.querySelectorAll(".testimonial_form");
 for(let i=0; i<testimonial_forms.length; i++){
     var testimonial_form = testimonial_forms[i];

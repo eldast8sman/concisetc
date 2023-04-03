@@ -1,0 +1,104 @@
+<form class="service_form" data-id="">
+    @component('admin.components.forms.input')
+        @slot('input_label')
+            Service
+        @endslot
+        @slot('input_type')
+            text
+        @endslot
+        @slot('input_name')
+            title
+        @endslot
+        @slot('input_id')
+            service_title
+        @endslot
+        @slot('input_placeholder')
+            Service
+        @endslot
+        @slot('input_value')
+            {{ $title_value }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.textarea')
+        @slot('textarea_label')
+            Service Summary
+        @endslot
+        @slot('textarea_id')
+            service_summary
+        @endslot
+        @slot('textarea_name')
+            summary
+        @endslot
+        @slot('textarea_placeholder')
+            Service Summary
+        @endslot
+        @slot('textarea_rows')
+            3
+        @endslot
+        @slot('textarea_value')
+            {{ $summary_value }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.textarea')
+        @slot('textarea_label')
+            Content
+        @endslot
+        @slot('textarea_id')
+            service_content
+        @endslot
+        @slot('textarea_name')
+            content
+        @endslot
+        @slot('textarea_placeholder')
+            Content
+        @endslot
+        @slot('textarea_rows')
+            5
+        @endslot
+        @slot('textarea_value')
+            {{ $content_value }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.textarea')
+        @slot('textarea_label')
+            Solution
+        @endslot
+        @slot('textarea_id')
+            solution_content
+        @endslot
+        @slot('textarea_name')
+            solution
+        @endslot
+        @slot('textarea_placeholder')
+            Content
+        @endslot
+        @slot('textarea_rows')
+            5
+        @endslot
+        @slot('textarea_value')
+            {{ $content_value }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.file_input')
+        @slot('input_label')
+            Photo
+        @endslot
+        @slot('input_id')
+            image_upload
+        @endslot
+        @slot('input_name')
+            file
+        @endslot
+        @slot('input_accept')
+            image/jpg, image/jpeg, image/png
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.submit')
+        @slot('submit_id')
+            service_submit
+        @endslot
+        @slot('submit_value')
+            Submit
+        @endslot
+    @endcomponent
+</form>
