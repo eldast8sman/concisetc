@@ -114,48 +114,7 @@
                     <li><a href="../">Home</a></li>
                     <li><a href="../blogs">Blogs</a></li>
                     <li><a href="../projects">Projects</a></li>
-                    {{-- <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./index.html">Dashboard 1</a></li>
-                            <li><a href="./index2.html">Dashboard 2</a></li>
-                        </ul>
-                    </li> --}}
-                    <li class="nav-label">Persons</li>
-                    <li><a href="../ministers"><i class="icon icon-single-04"></i><span class="nav-text">Ministers</span></a></li>
-                    <li><a href="../admins"><i class="icon icon-single-04"></i><span class="nav-text">Admins</span></a></li>
-                    
-                    
-                    
-                    <li class="nav-label">Resources</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-app-store"></i><span class="nav-text">Media</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="../message-series">Message Series</a></li>
-                            <li><a href="../messages">Messages</a></li>
-                            <li><a href="../photos">Photos</a></li>
-                            <li><a href="../videos">Videos</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void()" class="has-arrow" aria-expanded="false"><i class="icon icon-form"></i><span class="nav-text">Publications</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="../books">Books</a></li>
-                            <li><a href="../devotionals">Devotionals</a></li>
-                            <li><a href="../articles">Articles</a></li>
-                            <li><a href="../magazines">Magazines</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void()" class="has-arrow" aria-expanded="false"><i class="icon icon-globe-2"></i><span class="nav-text">Components</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="../page_headers">Page Headers</a></li>
-                            <li><a href="../about-us">About Us</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                                class="nav-text">Widget</span></a></li>
-                    <li class="nav-label">Forms</li>
+                    <li><a href="../services">Services</a></li>
                 </ul>
             </div>
 

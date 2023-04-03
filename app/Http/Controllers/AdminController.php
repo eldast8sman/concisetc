@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Team;
 use App\Models\Work;
-use App\Models\Testimonial;
+use App\Models\Service;
 use App\Models\WorkImage;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -79,6 +80,30 @@ class AdminController extends Controller
 
         return view('admin.work', [
             'project' => $project
+        ]);
+    }
+
+    public function services(){
+        $services = Service::orderBy('id', 'asc')->get();
+        foreach($services as $service){
+            if(!empty($service->filename)){
+                $service->filename = url($service->filename);
+            }
+        }
+
+        return view('admin.services', [
+            'services' => $services
+        ]);
+    }
+
+    public function service($slug){
+        $service = Service::where('slug', $slug)->first();
+        if(!empty($service->filename)){
+            $service->filename = url($service->filename);
+        }
+
+        return view('admin.service', [
+            'service' => $service
         ]);
     }
 }

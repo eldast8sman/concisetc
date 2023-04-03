@@ -5,13 +5,30 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Team;
 use App\Models\Work;
+use App\Models\Service;
 use App\Models\WorkImage;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function index(){
-        return view('index');
+        $services = Service::orderBy('id', 'asc')->get();
+        foreach($services as $service){
+            if(strpos(strtolower($service->title), "logistic") !== false){
+                $service->icon = 'imgs/services/bus.svg';
+            } elseif(strpos(strtolower($service->title), "school") !== false){
+                $service->icon = 'imgs/services/utility.svg';
+            } elseif(strpos(strtolower($service->title), "software") !== false){
+                $service->icon = 'imgs/services/code.svg';
+            } elseif(strpos(strtolower($service->title), "website") !== false){
+                $service->icon = 'imgs/services/code.svg';
+            } else {
+                $service->icon = 'imgs/services/hammer.svg';
+            }
+        }
+        return view('index', [
+            'services' => $services,
+        ]);
     }
 
     public function about(){
@@ -126,6 +143,14 @@ class PageController extends Controller
         return view('project', [
             'project' => $project,
             'images' => $images
+        ]);
+    }
+
+    public function service($slug){
+        $service = Service::where('slug', $slug)->first();
+
+        return view('service', [
+            'service' => $service
         ]);
     }
 }

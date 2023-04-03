@@ -412,7 +412,7 @@ if(del_service){
 
         $.ajax({
             type: "DELETE",
-            url: API_URL+"blogs/"+service_id,
+            url: API_URL+"services/"+service_id,
             dataType: "json",
             headers: {
                 "Authorization": "Bearer "+localStorage.getItem('token'),

@@ -11,8 +11,10 @@ class ServiceController extends Controller
 {
     public function store(StoreServiceRequest $request){
         $all = $request->except(['file']);
-        if($upload_image = FileController::uploadFile($request->file, 'service')){
-            $all['filename'] = 'img/service/'.$upload_image;
+        if(!empty($request->file)){
+            if($upload_image = FileController::uploadFile($request->file, 'service')){
+                $all['filename'] = 'img/service/'.$upload_image;
+            }
         }
         if($service = Service::create($all)){
             return response([

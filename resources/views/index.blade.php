@@ -73,19 +73,23 @@
 
       <div class="container-fluid px-sm-5 px-md-1 px-lg-5 text-center">
         <div class="row g-3">
+          @foreach ($services as $service)
           <div class="col-12 col-md-6">
             <div class="pt-3 pb-1 px-2 services_col ">
               <div class="services_icon_cont">
-                <img src="imgs/services/hammer.svg" alt="hammer icon" />
+                <img src="{{ asset($service->icon) }}" alt="hammer icon" />
               </div>
-              <h5 class="my-3">Minority Program Management Tools</h5>
+              <h5 class="my-3">{{ $service->title }}</h5>
               <p class="mx-lg-4">
-                Bring every stakeholder on board in real-time and manage every aspect of your minority business from a dedicated dashboard that makes procurement & reporting easier.
+                {{ $service->summary }}
+              </p>
+              <p>
+                <a href="{{ env('APP_URL') }}/services/{{ $service->slug }}" class="button button-primary">Read More</a>
               </p>
             </div>
           </div>
-          
-          <div class="col-12 col-md-6">
+          @endforeach
+          {{-- <div class="col-12 col-md-6">
             <div class="pt-3 pb-1 px-2 services_col ">
               <div class="services_icon_cont">
                 <img src="imgs/services/bus.svg" alt="bus icon" />
@@ -131,7 +135,7 @@
                 Employ our expertise to build fully responsive, well-optimized & user-friendly websites & mobile apps with custom features integrated just for your business.
               </p>
             </div>
-          </div>
+          </div> --}}
 
 
           {{-- <div class="col-12 col-md-6">

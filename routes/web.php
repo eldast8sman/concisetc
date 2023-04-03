@@ -25,6 +25,8 @@ Route::controller(PageController::class)->group(function(){
     Route::get('/our-work', 'projects');
     Route::get('/our-work/{slug}', 'project');
 
+    Route::get('/services/{slug}', 'service');
+
     Route::get('/contact-us', 'contact');
 });
 
@@ -39,5 +41,8 @@ Route::prefix('dashboard')->group(function(){
 
         Route::get('/projects', 'projects');
         Route::get('/projects/{slug}', 'project');
+
+        Route::get('/services', 'services');
+        Route::get('/services/{slug}', 'service');
     });
 });

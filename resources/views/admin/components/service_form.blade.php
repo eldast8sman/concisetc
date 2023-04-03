@@ -1,4 +1,4 @@
-<form class="service_form" data-id="">
+<form class="service_form" data-id="{{ $data_id }}">
     @component('admin.components.forms.input')
         @slot('input_label')
             Service
@@ -64,19 +64,19 @@
             Solution
         @endslot
         @slot('textarea_id')
-            solution_content
+            service_solution
         @endslot
         @slot('textarea_name')
             solution
         @endslot
         @slot('textarea_placeholder')
-            Content
+            Solution We Provide
         @endslot
         @slot('textarea_rows')
             5
         @endslot
         @slot('textarea_value')
-            {{ $content_value }}
+            {{ $solution_value }}
         @endslot
     @endcomponent
     @component('admin.components.forms.file_input')
