@@ -41,7 +41,7 @@
                                             @foreach ($services as $service)
                                                 <tr>
                                                     <td>{{ $service->title }}</td>
-                                                    <td><a href="{{ env('ADMIN_URL') }}services/{{ $service->slug }}" class="text-primary">More Details</a></td>
+                                                    <td><a href="{{ env('ADMIN_URL') }}/services/{{ $service->slug }}" class="text-primary">More Details</a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

@@ -169,6 +169,11 @@ class PageController extends Controller
 
     public function service($slug){
         $service = Service::where('slug', $slug)->first();
+        if(empty($service->filename)){
+            $service->filename = "";
+        } else {
+            $service->filename = url($service->filename);
+        }
 
         return view('service', [
             'service' => $service
