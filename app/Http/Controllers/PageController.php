@@ -26,6 +26,11 @@ class PageController extends Controller
                 $service->icon = 'imgs/services/hammer.svg';
             }
         }
+
+        $projects = Work::inRandomOrder()->take(4)->get();
+        foreach($projects as $project){
+            
+        }
         return view('index', [
             'services' => $services,
         ]);
@@ -83,23 +88,36 @@ class PageController extends Controller
     }
 
     public function projects(){
-        $sort = !empty($_GET['filter']) ? (string)$_GET['filter'] : "";
+        $sort = !empty($_GET['filter']) ? (string)urldecode($_GET['filter']) : "";
         if(!empty($sort)){
             $projects = [];
 
             $works = Work::orderBy('created_at', 'desc')->get();
             foreach($works as $work){
+                $all_tags = [];
                 $tags = explode(',', $work->tags);
+
                 foreach($tags as $tag){
                     $tag = trim($tag);
+                    $all_tags[] = $tag;
                 }
 
-                if(in_array($sort, $tags)){
+                if(in_array($sort, $all_tags)){
                     $projects[] = $work;
                 }
             }
 
-            $projects = self::paginate_array($projects);
+            $page = !empty($_GET['page']) ? (string)$_GET['page'] : 1;
+
+            $projects = self::paginate_array($projects, 10, $page);
+            foreach($projects as $project){
+                $image = WorkImage::where('work_id', $project->id)->first();
+                if(!empty($image)){
+                    $project->filename = url($image->filename);
+                } else {
+                    $project->filename = "";
+                }
+            }
 
         } else {
             $projects = Work::orderBy('created_at', 'desc')->paginate(10);
@@ -134,6 +152,8 @@ class PageController extends Controller
 
     public function project($slug){
         $project = Work::where('slug', $slug)->first();
+        $first_image = WorkImage::where('work_id', $project->id)->first();
+        $first_image->filename = url($first_image->filename);
 
         $images = WorkImage::where('work_id', $project->id)->get();
         foreach($images as $image){
@@ -142,7 +162,8 @@ class PageController extends Controller
 
         return view('project', [
             'project' => $project,
-            'images' => $images
+            'images' => $images,
+            'first_image' => $first_image
         ]);
     }
 

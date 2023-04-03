@@ -37,11 +37,15 @@
     </div>
   </section>
 
+  <section class="p-5">
+    <div class="col-12">
+      <img src="{{ $first_image->filename }}" alt="" width="100%">
+    </div>
+  </section>
+
+
   <div class="container bloglist mt-5">
     <div class="row">
-      <div class="col-lg-12 bloglist-head">
-        <p>Project Images</p>
-      </div>
     </div>
     <div class="row popup-gallery" id="blogs">
       @foreach ($images as $image)

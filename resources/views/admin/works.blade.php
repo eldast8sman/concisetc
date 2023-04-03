@@ -31,7 +31,7 @@
                             <div class="row">
                                 @foreach ($projects as $project)
                                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                                        <a href="{{ env('ADMIN_URL') }}projects/{{ $project->slug }}">
+                                        <a href="{{ env('ADMIN_URL') }}/projects/{{ $project->slug }}">
                                             @component('admin.components.cards')
                                                 @slot('title')
                                                     {{ $project->title }}

@@ -13,7 +13,7 @@
             <h1 class="display-4 hero_simplified col-md-10">Innovative Technology & Custom Software Solutions</h1>
             {{-- <h1 class="display-4 hero_you">For Construction Business Excellence</h1> --}}
             <div class="row">
-              <p class="col col-md-10 text-center text-md-start my-3 mx-auto" style="font-size: 20px">
+              <p class="col col-md-9 text-center my-3 mx-auto" style="font-size: 20px;">
                   We're a B2B software solutions agency that's committed to helping the construction industry, school districts, logistics
                   and government in building and deploying custom, best-of-breed software solutions to enhance processes and improve productivity.
               </p>
@@ -74,7 +74,7 @@
       <div class="container-fluid px-sm-5 px-md-1 px-lg-5 text-center">
         <div class="row g-3">
           @foreach ($services as $service)
-          <div class="col-12 col-md-6">
+          <a  href="{{ env('APP_URL') }}/services/{{ $service->slug }}" class="col-12 col-md-6">
             <div class="pt-3 pb-1 px-2 services_col ">
               <div class="services_icon_cont">
                 <img src="{{ asset($service->icon) }}" alt="hammer icon" />
@@ -83,11 +83,8 @@
               <p class="mx-lg-4">
                 {{ $service->summary }}
               </p>
-              <p>
-                <a href="{{ env('APP_URL') }}/services/{{ $service->slug }}" class="button button-primary">Read More</a>
-              </p>
             </div>
-          </div>
+          </a>
           @endforeach
           {{-- <div class="col-12 col-md-6">
             <div class="pt-3 pb-1 px-2 services_col ">
