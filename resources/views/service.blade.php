@@ -65,7 +65,7 @@
   @else
       <div class="container mb-5 pb-5">
         <div class="row">
-          <div class="col-md-9 mx-auto rounded p-3" style="background-color: #8090FF; color: #FFF">
+          <div class="col-md-9 mx-auto rounded p-3" style="background-color: var(--primary-1000); color: #FFF">
             <p class="m-3" style="
             font-family: 'Manrope';
             font-style: normal;
@@ -78,6 +78,34 @@
           </div>
         </div>
       </div>
+  @endif
+
+  @if (!empty($projects))
+      <!-------------------- WORKS SECTION ----------------------->
+  <section class="py-5 works_section" id="works">
+    <div class="container-lg">
+      <div class="row justify-content-center g-3">
+        @foreach ($projects as $project)
+        <div class="col-12 col-md-6">
+            <a href="{{ env('APP_URL') }}/our-work/{{ $project->slug }}"  class="card border-0">
+              <div class="w-100 works_img_cont works_img_cont1" style="
+                    background-image: url({{ $project->filename }});
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                "></div>
+              <div class="card-body ps-0">
+                <h5 class="card-title">{{ $project->title }}</h5>
+                <p class="card-text project_desc">
+                  {{ $project->summary }}
+                </p>
+              </div>
+            </a>
+          </div>    
+        @endforeach
+      </div>
+    </div>
+  </section>
   @endif
     @component('components.scale')
     

@@ -38,7 +38,7 @@
   </section>
 
   <section class="p-5">
-    <div class="col-12">
+    <div class="col-lg-6 col-md-9 mx-auto">
       <img src="{{ $first_image->filename }}" alt="" width="100%">
     </div>
   </section>

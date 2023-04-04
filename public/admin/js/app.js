@@ -596,7 +596,7 @@ $("form.work_form").submit(function(e){
         method = "POST";
     } else {
         url = API_URL+"works/"+data_id;
-        method = "PUT";
+        method = "POST";
     }
 
     var fd = new FormData(document.querySelector(".work_form"));
@@ -674,9 +674,9 @@ for(let i=0; i<image_forms.length; i++){
        
 
         if(data_id == ""){
-            var url = API_URL+"works/images";
+            var url = API_URL+"works/images/add";
         } else {
-            var url = API_URL+"works/images/"+data_id;
+            var url = API_URL+"works/images/change/"+data_id;
         }
 
         toaster_success("Uploading Image...")

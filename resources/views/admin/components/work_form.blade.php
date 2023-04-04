@@ -139,6 +139,66 @@
             {{ $tags_value }}
         @endslot
     @endcomponent
+    @component('admin.components.forms.select')
+        @slot('select_label')
+            Service
+        @endslot
+        @slot('select_name')
+            service1
+        @endslot
+        @slot('select_id')
+            work_service1
+        @endslot
+        @slot('select_options')
+            <option value="">--Service--</option>
+            {{ $service1_options }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.select')
+        @slot('select_label')
+            Service
+        @endslot
+        @slot('select_name')
+            service2
+        @endslot
+        @slot('select_id')
+            work_service2
+        @endslot
+        @slot('select_options')
+            <option value="">--Service--</option>
+            {{ $service2_options }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.select')
+        @slot('select_label')
+            Service
+        @endslot
+        @slot('select_name')
+            service3
+        @endslot
+        @slot('select_id')
+            work_service3
+        @endslot
+        @slot('select_options')
+            <option value="">--Service--</option>
+            {{ $service3_options }}
+        @endslot
+    @endcomponent
+    @component('admin.components.forms.select')
+        @slot('select_label')
+            Service
+        @endslot
+        @slot('select_name')
+            service4
+        @endslot
+        @slot('select_id')
+            work_service4
+        @endslot
+        @slot('select_options')
+            <option value="">--Service--</option>
+            {{ $service4_options }}
+        @endslot
+    @endcomponent
     @component('admin.components.forms.submit')
         @slot('submit_id')
             work_submit

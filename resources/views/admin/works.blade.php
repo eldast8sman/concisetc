@@ -71,7 +71,26 @@
                     @slot('modal_body')
                         <div class="col-12 py-3">
                             @component('admin.components.work_add_form')
-                                
+                                @slot('service1_options')
+                                    @foreach ($services as $service)
+                                        <option value="{{ $service->id }}">{{ $service->title }}</option>
+                                    @endforeach
+                                @endslot
+                                @slot('service2_options')
+                                    @foreach ($services as $service)
+                                        <option value="{{ $service->id }}">{{ $service->title }}</option>
+                                    @endforeach
+                                @endslot
+                                @slot('service3_options')
+                                    @foreach ($services as $service)
+                                        <option value="{{ $service->id }}">{{ $service->title }}</option>
+                                    @endforeach
+                                @endslot
+                                @slot('service4_options')
+                                    @foreach ($services as $service)
+                                        <option value="{{ $service->id }}">{{ $service->title }}</option>
+                                    @endforeach
+                                @endslot
                             @endcomponent
                         </div>
                     @endslot

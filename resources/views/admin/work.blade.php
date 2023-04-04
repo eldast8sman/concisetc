@@ -15,7 +15,7 @@
                     {{ $project->title }}
                 @endslot
                 @slot('other_links')
-                    <li class="breadcrumb-item"><a href="{{ env('ADMIN_URL') }}projects">Projects</a></li>
+                    <li class="breadcrumb-item"><a href="{{ env('ADMIN_URL') }}/projects">Projects</a></li>
                     <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ $project->title }}</a></li>
                 @endslot
             @endcomponent
@@ -54,8 +54,18 @@
                                 </p>
                                 <p>
                                     <strong>Project URL</strong>
-                                    <a href="{{ $project->work_url }}">{{ $project->work_url }}</a>
+                                    <br>
+                                    <a class="text-primary" href="{{ $project->work_url }}">{{ $project->work_url }}</a>
                                 </p>
+                                @if (!empty($project->services))
+                                    <p>
+                                        <strong>Services</strong>
+                                        <br>
+                                        @foreach ($project->services as $service)
+                                            <a href="{{ env('ADMIN_URL') }}/services/{{ $service->slug }}" class="text-primary mr-2 mb-2">{{ $service->title }}</a>
+                                        @endforeach
+                                    </p>
+                                @endif
                                 <p>
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit_work_modal">Edit</button>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete_work_modal">Delete</button>
@@ -93,6 +103,50 @@
                                                     @endslot
                                                     @slot('tags_value')
                                                         {{ $project->tags }}
+                                                    @endslot
+                                                    @slot('service1_options')
+                                                        @foreach ($services as $service)
+                                                            <option value="{{ $service->id }}"
+                                                                @if ($project->service1 == $service->id)
+                                                                    {{ " selected" }}
+                                                                @endif    
+                                                            >
+                                                                {{ $service->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    @endslot
+                                                    @slot('service2_options')
+                                                        @foreach ($services as $service)
+                                                            <option value="{{ $service->id }}"
+                                                                @if ($project->service2 == $service->id)
+                                                                    {{ " selected" }}
+                                                                @endif    
+                                                            >
+                                                                {{ $service->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    @endslot
+                                                    @slot('service3_options')
+                                                        @foreach ($services as $service)
+                                                            <option value="{{ $service->id }}"
+                                                                @if ($project->service3 == $service->id)
+                                                                    {{ " selected" }}
+                                                                @endif    
+                                                            >
+                                                                {{ $service->title }}
+                                                            </option>
+                                                        @endforeach
+                                                    @endslot
+                                                    @slot('service4_options')
+                                                        @foreach ($services as $service)
+                                                            <option value="{{ $service->id }}"
+                                                                @if ($project->service4 == $service->id)
+                                                                    {{ " selected" }}
+                                                                @endif    
+                                                            >
+                                                                {{ $service->title }}
+                                                            </option>
+                                                        @endforeach
                                                     @endslot
                                                 @endcomponent
                                             </div>

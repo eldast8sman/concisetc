@@ -175,8 +175,19 @@ class PageController extends Controller
             $service->filename = url($service->filename);
         }
 
+        $projects = Work::where('service1', $service->id)->orWhere('service2', $service->id)->orWhere('service3', $service->id)->orWhere('service4', $service->id)->paginate(10);
+        foreach($projects as $project){
+            $image = WorkImage::where('work_id', $project->id)->first();
+            if(!empty($image)){
+                $project->filename = url($image->filename);
+            } else {
+                $project->filename = "";
+            }
+        }
+
         return view('service', [
-            'service' => $service
+            'service' => $service,
+            'projects' => $projects
         ]);
     }
 }

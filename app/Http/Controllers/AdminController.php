@@ -65,8 +65,11 @@ class AdminController extends Controller
             }
         }
 
+        $services = Service::orderBy('title', 'asc')->get();
+
         return view('admin.works', [
-            'projects' => $projects
+            'projects' => $projects,
+            'services' => $services
         ]);
     }
 
@@ -78,8 +81,28 @@ class AdminController extends Controller
         }
         $project->images = $images;
 
+        $project_services = [];
+
+        if(!empty($project->service1)){
+            $project_services[] = Service::find($project->service1);
+        }
+        if(!empty($project->service2)){
+            $project_services[] = Service::find($project->service2);
+        }
+        if(!empty($project->service3)){
+            $project_services[] = Service::find($project->service3);
+        }
+        if(!empty($project->service4)){
+            $project_services[] = Service::find($project->service4);
+        }
+
+        $project->services = $project_services;
+
+        $services = Service::orderBy('title', 'asc')->get();
+
         return view('admin.work', [
-            'project' => $project
+            'project' => $project,
+            'services' => $services
         ]);
     }
 

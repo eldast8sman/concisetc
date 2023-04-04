@@ -19,7 +19,11 @@ class Work extends Model
         'solution',
         'conclusion',
         'work_url',
-        'tags'
+        'tags',
+        'service1',
+        'service2',
+        'service3',
+        'service4'
     ];
 
     public function getSlugOptions() : SlugOptions

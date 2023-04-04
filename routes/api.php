@@ -46,9 +46,9 @@ Route::middleware('auth:sanctum')->group(function(){
 
     Route::controller(WorkController::class)->group(function(){
         Route::post('/works', 'store');
-        Route::put('/works/{id}', 'update');
-        Route::post('/works/images', 'add_file');
-        Route::post('/works/images/{id}', 'change_file');
+        Route::post('/works/{id}', 'update');
+        Route::post('/works/images/add', 'add_file');
+        Route::post('/works/images/change/{id}', 'change_file');
         Route::delete('/works/images/{id}', 'destroy_file');
         Route::delete('/works/{id}', 'destroy');
     });
