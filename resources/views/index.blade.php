@@ -181,7 +181,25 @@
       </div>
 
       <div class="row justify-content-center g-3">
+        @foreach ($projects as $project)
         <div class="col-12 col-md-6">
+            <a href="{{ env('APP_URL') }}/our-work/{{ $project->slug }}"  class="card border-0">
+              <div class="w-100 works_img_cont works_img_cont1" style="
+                    background-image: url({{ $project->filename }});
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                "></div>
+              <div class="card-body ps-0">
+                <h5 class="card-title">{{ $project->title }}</h5>
+                <p class="card-text project_desc">
+                  {{ $project->summary }}
+                </p>
+              </div>
+            </a>
+          </div>    
+        @endforeach
+        {{-- <div class="col-12 col-md-6">
           <a href="projectscreen2.html"  class="card border-0">
             <div class="w-100 works_img_cont works_img_cont1"></div>
             <div class="card-body ps-0">
@@ -235,7 +253,7 @@
               </p>
             </div>
           </a>
-        </div>
+        </div> --}}
       </div>
     </div>
   </section>

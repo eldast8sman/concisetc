@@ -29,10 +29,16 @@ class PageController extends Controller
 
         $projects = Work::inRandomOrder()->take(4)->get();
         foreach($projects as $project){
-            
+            $image = WorkImage::where('work_id', $project->id)->first();
+            if(!empty($image)){
+                $project->filename = url($image->filename);
+            } else {
+                $project->filename = "";
+            }
         }
         return view('index', [
             'services' => $services,
+            'projects' => $projects
         ]);
     }
 
