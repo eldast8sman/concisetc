@@ -115,6 +115,7 @@
                     <li><a href="../blogs">Blogs</a></li>
                     <li><a href="../projects">Projects</a></li>
                     <li><a href="../services">Services</a></li>
+                    <li><a href="#" id="dash_logout">Logout</a></li>
                 </ul>
             </div>
 

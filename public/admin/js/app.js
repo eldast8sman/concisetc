@@ -1,5 +1,5 @@
-// var BASE_URL = "https://www.cfcing.org/";
-var BASE_URL = "http://127.0.0.1:8000/";
+var BASE_URL = "https://www.cfcing.org/";
+// var BASE_URL = "http://127.0.0.1:8000/";
 var ADMIN_URL = BASE_URL + "dashboard/";
 var API_URL = BASE_URL + "api/";
 
@@ -79,8 +79,9 @@ $("a#dash_logout").click(function(e){
             window.location = BASE_URL+"dashboard";
         },
         error: function(response){
-            console.log(response.responseText);
-            toaster_error("Oops! "+response.responseText);
+            message = JSON.parse(response.responseText);
+            console.log(message);
+            toaster_error(message.message);
         }
     })
 });

@@ -115,6 +115,7 @@
                     <li><a href="dashboard/blogs">Blogs</a></li>
                     <li><a href="dashboard/projects">Projects</a></li>
                     <li><a href="dashboard/services">Services</a></li>
+                    <li><a href="#" id="dash_logout">Logout</a></li>
                 </ul>
             </div>
 

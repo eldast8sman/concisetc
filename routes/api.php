@@ -26,6 +26,7 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/blogs', [BlogController::class, 'index']);
 Route::middleware('auth:sanctum')->group(function(){
+    Route::post('/logout', [AuthController::class, 'logout']);
     Route::controller(BlogController::class)->group(function(){
         Route::post('/blogs', 'store');
         Route::post('/blogs/{id}', 'update');
