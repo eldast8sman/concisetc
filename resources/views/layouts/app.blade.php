@@ -22,7 +22,7 @@
   <!---------------------------- NAVBAR ---------------------------->
   <nav class="navbar sticky-top navbar-expand-lg pro_nav">
     <div class="container-fluid">
-      <a class="navbar-brand me-auto logo_cont" href="#"><img src="{{ asset('imgs/logo.svg') }}" alt="concise logo" /></a>
+      <a class="navbar-brand me-auto logo_cont" href="{{ env('APP_URL') }}"><img src="{{ asset('imgs/logo.svg') }}" alt="concise logo" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -65,13 +65,13 @@
             <h6 class="mb-3">LEARN MORE</h6>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="bloglist.html">Blog</a>
+                <a href="{{ env('APP_URL') }}/blogs">Blog</a>
               </li>
               <li class="mb-2">
-                <a href="aboutUs.html">About Us</a>
+                <a href="{{ env('APP_URL') }}/about-us">About Us</a>
               </li>
               <li class="mb-2">
-                <a href="contact-us">Contact Us</a>
+                <a href="{{ env('APP_URL') }}/contact-us">Contact Us</a>
               </li>
             </ul>
           </div>
@@ -81,10 +81,10 @@
             <h6 class="mb-3">COMPANY</h6>
             <ul class="list-unstyled">
               <li class="mb-2">
-                <a href="index.html#services">Services</a>
+                <a href="{{ env('APP_URL') }}/#services">Services</a>
               </li>
               <li class="mb-2">
-                <a href="aboutUs.html#teams">Our Team</a>
+                <a href="{{ env('APP_URL') }}/about-us#teams">Our Team</a>
               </li>
             </ul>
           </div>

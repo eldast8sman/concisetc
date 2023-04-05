@@ -259,7 +259,7 @@
   </section>
 
   <!-------------------- TESTIMONIALS SECTION ----------------------->
-  <section class="py-5 testimonials_section">
+  {{-- <section class="py-5 testimonials_section">
     <div class="container-lg">
       <p class="mb-0 text-center small_header">Testimonials</p>
       <h2 class="mt-1 mb-5 text-center big_header">
@@ -293,27 +293,39 @@
             </div>
           </div>
         </div>
-
       </div>
+    </div>
+  </section> --}}
 
-      <!-- <div class="d-flex flex-column flex-md-row mb-4 align-items-center justify-content-center">
-        <div class="testimonials_img_cont">
-          <img class="img-fluid" src="imgs/testimonials/girl.svg" alt="lady smiling" />
-        </div>
-        <div class="mt-3 mt-md-0 ms-md-4 text-center text-md-start t_text_cont">
-          <p class="mb-4 t_text">
-            “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            blandit vel sed sagittis. Scelerisque neque at elementum mi nulla.
-            Morbi diam eu non ut augue. Mattis amet bibendum faucibus elit,
-            tellus mi velit lacus. Ut dui ac tellus lectus enim euismod odio.
-            Aliquet sodales vestibulum feugiat aliquam cras egestas varius
-            habitasse integer. In.”
-          </p>
-          <small class="d-block mb-1 t_name">John Doe </small>
-          <small class="d-block t_position"> Director - Lewiscompany.ai </small>
-          
-        </div>
-      </div> -->
+  <section class="py-5 testimonials_section">
+    <div class="container-lg">
+      <p class="mb-0 text-center small_header">Testimonials</p>
+      <h2 class="mt-1 mb-5 text-center big_header">
+        See what our clients are saying about our custom software solutions
+      </h2>
+    </div>
+
+    <div>
+      <div  id="image-wrapper" class="bg-red-900 position-relative">
+    
+     <div class=" align-items-center d-none d-md-flex position-absolute bottom-0  start-50 arrows_cont">
+            <div class="t_prev_arrow_cont">
+              <img class="t_prev_arrow" src="imgs/testimonials/prev-arrow.svg" alt="arrow for previous">
+            </div>
+            <div class="ms-3 t_next_arrow_cont">
+              <img class="t_next_arrow" src="imgs/testimonials/next-arrow.svg" alt="arrow for next">
+            </div>
+    </div>
+     <div class="d-flex align-items-center d-md-none position-absolute top-50 mx-md-auto  mx-auto arrows_cont">
+            <div class="t_prev_arrow_cont_md">
+              <img class="t_prev_arrow_md" src="imgs/testimonials/prev-arrow.svg" alt="arrow for previous">
+            </div>
+            <div class="ms-3 t_next_arrow_cont_md">
+              <img class="t_next_arrow" src="imgs/testimonials/next-arrow.svg" alt="arrow for next">
+            </div>
+  </div>
+  </div>
+
     </div>
   </section>
 

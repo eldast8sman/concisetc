@@ -10,6 +10,27 @@ use App\Http\Requests\UpdateTestimonialRequest;
 
 class TestimonialController extends Controller
 {
+    public function index(){
+        $testimonials = Testimonial::orderBy('id', 'asc');
+        if($testimonials->count() > 0){
+            $testimonials = $testimonials->get();
+            foreach($testimonials as $testimonial){
+                $testimonial->filename = url($testimonial->filename);
+            }
+
+            return response([
+                'status' => 'success',
+                'message' => 'Testimonials fetched',
+                'data' => $testimonials
+            ], 200);
+        } else {
+            return response([
+                'status' => 'failed',
+                'message' => 'No Testimonial has been uploaded'
+            ], 404);
+        }
+    }
+
     public function store(StoreTestimonialRequest $request){
         $all = $request->except(['file']);
         $upload_image = FileController::uploadFile($request->file, 'testimonial');

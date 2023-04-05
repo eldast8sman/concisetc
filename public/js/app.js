@@ -1,6 +1,78 @@
-// var BASE_URL = "http://127.0.0.1:8000/";
-var BASE_URL = "https://www.cfcing.org/";
+var BASE_URL = "http://127.0.0.1:8000/";
+// var BASE_URL = "https://www.cfcing.org/";
 var API_URL = BASE_URL + "api/";
+
+if($("div#image-wrapper")){
+    $.ajax({
+        type: "GET",
+        url: API_URL+"testimonials",
+        headers: {
+            "Accept": "application/json"
+        },
+        success: function(response){
+            const wrapper = document.querySelector('#image-wrapper')
+            const data = response.data;
+
+            const reviewSlideInfo = data?.map((review,id)=> {
+  
+                return `<div class="slide">
+                          <div class=" d-flex flex-column flex-lg-row align-items-center justify-content-center">
+        
+                            <div class="mb-3 mb-lg-0 testimonials_img_cont d-flex justify-content-center align-items-center">
+                              <img class="" src='imgs/testimonials/format_quote.svg' width=100 height=130 alt="lady smiling" />
+                              <div>
+                                <img class="" src=${review?.filename} alt="lady smiling" />
+                              </div>
+                            </div>
+                            <div class="ms-md-4 text-center text-md-start t_text_cont">
+                              <p class="mb-4 t_text">
+                                ${review?.testimonial}
+                              </p>
+                              <div>
+                                <small class="d-block mb-1 t_name">${review?.name}</small>
+                                <small class="d-block mb-3 mb-md-0 t_position">${review?.position}</small>
+                              </div>
+                            </div> 
+                          </div>
+                        </div>`
+            }).join('')
+            wrapper.insertAdjacentHTML("beforebegin",reviewSlideInfo)
+
+            const allSlides = document.querySelectorAll('.slide');
+            let curr = 1
+
+            const ShowSlides = (n) => {
+                if (n > allSlides.length) curr = 1
+                if (n < 1) {curr = allSlides.length}
+        
+                allSlides.forEach((sl, i)=> {
+                  allSlides[i].style.display = 'none'
+                })
+                allSlides[curr-1].style.display = 'block'
+            }
+            ShowSlides()
+
+            const moveSlice =(n)=>{
+                ShowSlides(curr+=n)
+            }
+    
+            document.querySelector('.t_prev_arrow_cont').addEventListener('click',()=> moveSlice(-1),false)
+            document.querySelector('.t_next_arrow_cont').addEventListener('click', ()=> moveSlice(1))
+            document.querySelector('.t_prev_arrow_cont_md').addEventListener('click',()=> moveSlice(-1),false)
+            document.querySelector('.t_next_arrow_cont_md').addEventListener('click', ()=> moveSlice(1))
+
+            function self_move(){
+                ShowSlides(curr+=1)
+            }
+
+            setInterval(self_move, 4000)
+        },
+        error: function(response){
+            message = JSON.parse(response.responseText);
+            console.log(message);
+        }
+    })
+}
 
 if($("button#load_blogs")){
     var page = 2;
