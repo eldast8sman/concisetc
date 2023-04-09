@@ -19,7 +19,7 @@
   <div class="bg1">
     <div class="container contt">
       <div class="row">
-        <div class="col-lg-10 we-create mt-5">
+        <div class="col-lg-10 col-sm-12 we-create mt-5" style="height: auto !important">
           <h1>
             Your Technology Partner for <span>Business Excellence</span>
         </h1>
@@ -48,7 +48,7 @@
   <div class="bg2">
     <div class="container contt">
       <div class="row">
-        <div class="col-lg-10 we-create mt-5" style="height: auto !important">
+        <div class="col-lg-10 col-sm-12 we-create mt-5" style="height: auto !important">
           <h1>
             Who <span>We</span> Are
           </h1>
