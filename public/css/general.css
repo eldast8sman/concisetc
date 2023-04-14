@@ -95,12 +95,16 @@ a {
 .small_header {
   color: var(--primary-1000);
   font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
   font-family: 'Manrope', sans-serif;
 }
 
 .big_header {
   color: var(--bird-blue-grey-1000);
   font-weight: 800;
+  font-size: 32px;
+  line-height: 32px;
   font-family: 'Manrope', sans-serif;
 }
 

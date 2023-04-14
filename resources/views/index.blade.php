@@ -8,12 +8,12 @@
   <!---------------------------- HERO SECTION ---------------------------->
   <section class="py-0 py-md-5 hero_section">
     <div class="container-md py-5 text-center text-md-start">
-      <center>
+      <div class="text-center hero_centered">
             {{-- <h1 class="display-4 hero_we">We Create</h1> --}}
-            <h1 class="display-4 hero_simplified col-md-10">Innovative Technology & Custom Software Solutions</h1>
+            <h1 class="display-4 hero_simplified col-md-10 mx-auto pt-lg-5 pt-sm-2 mt-lg-5 mt-sm-0">Innovative Technology & Custom Software Solutions</h1>
             {{-- <h1 class="display-4 hero_you">For Construction Business Excellence</h1> --}}
             <div class="row">
-              <p class="col col-md-9 text-center my-3 mx-auto" style="font-size: 20px;">
+              <p class="col col-md-9 text-center my-3 mx-auto">
                   We're a B2B software solutions agency that's committed to helping the construction industry, school districts, logistics
                   and government in building and deploying custom, best-of-breed software solutions to enhance processes and improve productivity.
               </p>
@@ -21,9 +21,9 @@
             <div class="mb-md-5">
   
               <button class="mt-2 me-3 buttn">GET STARTED</button>
-              <button class="mt-2 gradient_btn gradient_btn_find">FIND OUT MORE</button>
+              <button class="mt-2 gradient_btn gradient_btn_find buttn2">FIND OUT MORE</button>
             </div>
-      </center>
+          </div>
     </div>
   </section>
 
@@ -71,7 +71,7 @@
       <p class="mb-0 small_header">Our Services</p>
       <h2 class="mt-1 mb-4 big_header">Custom software solutions, specially built for you</h2>
 
-      <div class="container-fluid px-sm-5 px-md-1 px-lg-5 text-center">
+      <div class="container-fluid px-sm-5 px-md-1 px-lg-5 text-center col-lg-11">
         <div class="row g-3">
           @foreach ($services as $service)
           <a  href="{{ env('APP_URL') }}/services/{{ $service->slug }}" class="col-12 col-md-6">
@@ -162,43 +162,46 @@
         We pride ourselves on delivering the very best custom software solutions. What you see you believe: browse through our portfolio for an overview.
       </h2>
       <div class="row px-lg-5 gx-2 g-md-1 mt-4 mb-3 justify-content-center text-center">
-        <div class=" col-6 col-md-3 d-flex flex-column align-items-center">
+        <div class=" col-3 p-sm-0 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">30+</h3>
           <p class="lead mt-0">Clients</p>
         </div>
-        <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+        <div class="col-3 p-sm-0 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">10+</h3>
           <p class="lead mt-0">Solution Provided</p>
         </div>
-        <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+        <div class="col-3 p-sm-0 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">$5M+</h3>
           <p class="lead mt-0">Saved</p>
         </div>
-        <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+        <div class="col-3 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">100+</h3>
           <p class="lead mt-0">Hours</p>
         </div>
       </div>
 
       <div class="row justify-content-center g-3">
-        @foreach ($projects as $project)
-        <div class="col-12 col-md-6">
-            <a href="{{ env('APP_URL') }}/our-work/{{ $project->slug }}"  class="card border-0">
-              <div class="w-100 works_img_cont works_img_cont1" style="
-                    background-image: url({{ $project->filename }});
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                    background-position: center center;
-                "></div>
-              <div class="card-body ps-0">
-                <h5 class="card-title">{{ $project->title }}</h5>
-                <p class="card-text project_desc">
-                  {{ $project->summary }}
-                </p>
-              </div>
-            </a>
-          </div>    
-        @endforeach
+        <div class="row col-lg-12 mx-auto">
+          @foreach ($projects as $project)
+            <div class="col-12 col-md-6">
+              <a href="{{ env('APP_URL') }}/our-work/{{ $project->slug }}"  class="card border-0">
+                <div class="w-100 works_img_cont works_img_cont1 single-work" style="
+                      background-image: url({{ $project->filename }});
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      background-position: center center;
+                      max-width: 600px;
+                  "></div>
+                <div class="card-body ps-0">
+                  <h5 class="card-title">{{ $project->title }}</h5>
+                  <p class="card-text project_desc">
+                    {{ $project->summary }}
+                  </p>
+                </div>
+              </a>
+            </div>    
+          @endforeach
+        </div>
         {{-- <div class="col-12 col-md-6">
           <a href="projectscreen2.html"  class="card border-0">
             <div class="w-100 works_img_cont works_img_cont1"></div>
@@ -316,7 +319,7 @@
               <img class="t_next_arrow" src="imgs/testimonials/next-arrow.svg" alt="arrow for next">
             </div>
     </div>
-     <div class="d-flex align-items-center d-md-none position-absolute top-50 mx-md-auto  mx-auto arrows_cont">
+     <div class="d-flex align-items-center d-md-none position-absolute top-50 mx-md-auto  mx-auto arrows_cont pb-5">
             <div class="t_prev_arrow_cont_md">
               <img class="t_prev_arrow_md" src="imgs/testimonials/prev-arrow.svg" alt="arrow for previous">
             </div>
@@ -382,7 +385,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5 d-none d-lg-block">
+        <div class="col-lg-5 d-none d-lg-block hold-hands">
           <div class="mantra_hands_cont">
             <img class="img-fluid" src="imgs/mantra/hands.svg" alt="hands">
           </div>

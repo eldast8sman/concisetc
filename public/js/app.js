@@ -14,19 +14,20 @@ if($("div#image-wrapper")){
             const data = response.data;
 
             const reviewSlideInfo = data?.map((review,id)=> {
-  
-                return `<div class="slide">
+                if($(window).width() > 450){
+                    console.log("Greater");
+                    return `<div class="slide">
                           <div class=" d-flex flex-column flex-lg-row align-items-center justify-content-center">
         
                             <div class="mb-3 mb-lg-0 testimonials_img_cont d-flex justify-content-center align-items-center">
                               <img class="" src='imgs/testimonials/format_quote.svg' width=100 height=130 alt="lady smiling" />
                               <div>
-                                <img class="" src=${review?.filename} alt="lady smiling" />
+                                <img class="" src=${review?.filename} alt="${review?.name}" />
                               </div>
                             </div>
                             <div class="ms-md-4 text-center text-md-start t_text_cont">
                               <p class="mb-4 t_text">
-                                ${review?.testimonial}
+                                "${review?.testimonial}"
                               </p>
                               <div>
                                 <small class="d-block mb-1 t_name">${review?.name}</small>
@@ -35,6 +36,25 @@ if($("div#image-wrapper")){
                             </div> 
                           </div>
                         </div>`
+                } else {
+                    return `<div class="slide">
+                            <div class="ms-md-4 text-center text-md-start t_text_cont">
+                              <p class="mb-4 t_text">
+                                "${review?.testimonial}"
+                              </p>
+                              <div class="row mt-3">
+                                <div style="width: 48px; height: 48px; background-image: url(${review?.filename}); background-size: cover; background-position: center center; border: 1px solid #A5CFEC; border-radius: 72px;">
+                                   
+                                </div>
+                                <div class="col-9">
+                                    <small class="d-block mb-1 t_name">${review?.name}</small>
+                                    <small class="d-block mb-3 mb-md-0 t_position">${review?.position}</small>
+                                </div>
+                              </div>
+                            </div> 
+                          </div>
+                        </div>`
+                }
             }).join('')
             wrapper.insertAdjacentHTML("beforebegin",reviewSlideInfo)
 

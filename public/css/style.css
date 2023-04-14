@@ -4,10 +4,24 @@
 .hero_section {
   background-image: url(/imgs/hero-bcg.svg);
   background-size: cover;
+  height: 100vh;
+}
+
+.hero_centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
 }
 
 .hero_section h1 {
   font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 100%;
 }
 
 .hero_we {
@@ -26,7 +40,13 @@
 }
 
 .hero_section p {
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Manrope', sans-serif;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .btn-main {
@@ -43,6 +63,25 @@
   font-size: 14px;
   color: var(--primary-600);
 }
+
+@media(max-width: 450px){
+  .hero_section h1 {
+    font-size: 32px;
+  }
+
+  .hero_section p {
+    font-size: 16px;
+  }
+
+  .buttn {
+    width: 100%
+  }
+
+  .buttn2{
+    width: 100%
+  }
+}
+
 /*********************************** PARTNERS SECTION ***************************/
 .partners_section {
   background-color: var(--primary-100);
@@ -52,9 +91,30 @@
   width: 6rem;
 }
 
+@media(max-width: 576px){
+  .partners_section{
+    display: none;
+  }
+}
+
 /*********************************** SERVICES SECTION ***************************/
 .services_section {
   background-color: var(--pink-variant);
+}
+
+.services_section .small_header {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+}
+
+.services_section .big_header{
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 24px;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
 }
 
 .services_col {
@@ -64,12 +124,50 @@
 
 .services_col h5 {
   font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
   color: var(--bird-blue-grey-100);
+  letter-spacing: 0.02em;
 }
 
 .services_col p {
   font-weight: 500;
   color: var(--bird-blue-grey-200);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media(max-width:450px){
+  .services_section .small_header {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .services_section .small_header {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .services_section .big_header{
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .services_col h5 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .services_col p {
+    font-weight: 500;
+    color: var(--bird-blue-grey-200);
+    font-size: 14px;
+    line-height: 120%;
+  }
 }
 
 /*********************************** WORKS SECTION ***************************/
@@ -95,19 +193,75 @@
 .works_section h3 {
   font-weight: 600;
   color: var(--bird-blue-grey-1000);
+  font-family: 'Manrope' sans-serif;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
 }
 
 .works_section p.lead {
   font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 0.02em;
 }
 
 .works_section h5 {
   color: var(--bird-blue-grey-1000);
   font-weight: 800;
+  font-size: 24px;
+  line-height: 24px;
+  font-family: 'Manrope', sans-serif;
 }
 
 .project_desc {
   color: var(--bird-blue-grey-900);
+  font-family: 'Manrope';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  text-transform: capitalize;
+}
+
+.single-work {
+  height: 536px;
+}
+
+@media(max-width: 450px){
+  .single-work {
+    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .works_section h3 {
+    font-size: 24px;
+  }
+
+  .works_section p.lead {
+    font-size: 12px;
+  }
+
+  .works_section h5 {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .works_section .big_header{
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  .works_section .small-title{
+    padding: 0;
+  }
+
+  .project_desc {
+    font-size: 14px;
+    line-height: 150%;
+  }
 }
 
 /*********************************** TESTIMONIALS SECTION ***************************/
@@ -117,6 +271,10 @@
 
 .testimonials_section .small_header {
   color: var(--bird-blue-grey-200);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .testimonials_section .big_header {
@@ -144,6 +302,17 @@
 
 .testimonials_img_cont img {
   width: 100%;
+}
+
+@media(max-width: 450px){
+  .testimonials_section {
+    padding: 48px 16px;
+  }
+  .testimonials_section .big_header {
+    font-size: 20px;
+    line-height: 120%;
+    margin-bottom: 24px !important;
+  }
 }
 /* 576px */
 @media (max-width: 36em) {
@@ -178,12 +347,14 @@
 
 .t_text {
   color: var(--bird-blue-grey-200);
+  font-size: 20px;
+  line-height: 140%;
 }
 
 /*********************************** BLOGLIST SECTION ***************************/
 
 /*********************************** HERO SECTION ***************************/
-.hero_section {
+/* .hero_section {
   background-image: url(../imgs/hero-bcg.svg);
   background-size: cover;
 }
@@ -209,7 +380,7 @@
 
 .hero_section p {
   font-weight: 500;
-}
+} */
 
 .blog {
   margin-top: 4.25rem;
@@ -1363,11 +1534,16 @@ input:focus {
 .t_name {
   color: var(--bird-blue-grey-100);
   font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  text-transform: capitalize;
 }
 
 .t_position {
   color: var(--bird-blue-grey-300);
   font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
 }
 
 .t_arrow {
@@ -1386,6 +1562,35 @@ input:focus {
 .t_next_arrow_cont:active {
   outline: 1px solid var(--primary-100);
   border-radius: 50%;
+}
+
+@media(max-width: 450px){
+  .t_text {
+    font-size: 14px;
+  }
+
+  .t_prev_arrow_cont_md,
+  .t_next_arrow_cont_md{
+    margin: 0 30px 0 30px;
+  }
+
+  .t_text_cont {
+    padding: 0px 16px;
+    padding-bottom: 20px;
+  }
+
+  .t_text_cont img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .t_name {
+    text-align: left;
+  }
+
+  .t_position {
+    text-align: left;
+  }
 }
 
 /*********************************** MANTRA SECTION ***************************/
@@ -1418,6 +1623,12 @@ input:focus {
 @media (min-width: 75em) {
   .mantra_text {
     width: 50%;
+  }
+}
+
+@media(max-width: 576px){
+  .hold-hands {
+    display: none;
   }
 }
 
