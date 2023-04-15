@@ -72,21 +72,21 @@
       <div class="col-lg-12">
         <p class="p">Our Metrics</p>
         <h2>Our metric speaks for us </h2>
-        <div class="d-flex justify-content-around flex-">
+        <div class="d-flex flex- row">
 
-          <div>
+          <div class="col-3">
             <h1>30+</h1>
             <p>clients</p>
           </div>
-          <div>
+          <div class="col-3">
             <h1>31+</h1>
             <p>Service Provided</p>
           </div>
-          <div>
+          <div class="col-3">
             <h1>$5M+</h1>
             <p>Saved</p>
           </div>
-          <div>
+          <div class="col-3">
             <h1>100+</h1>
             <p>Hours</p>
           </div>
@@ -112,7 +112,7 @@
 
     <div class="row">
       @foreach ($teams as $team)
-        <div class="col-lg-3 col-md-3 profile">
+        <div class="col-lg-3 col-md-6 profile">
           <div class="col-12 rounded" style="height: 345px;
                                             background-image: url({{ $team->filename }});
                                             background-size: cover;
