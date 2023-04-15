@@ -122,8 +122,8 @@
           </div>
           <div class="flex">
             <h6 class="mt-3 ">{{ $team->name }}</h6>
-            <p class="">{{ $team->position }}</p>
-            <p style="font-family:Manrope; font-size:16px;line-height:22px">{{ $team->bio }}</p>
+            <p class="position">{{ $team->position }}</p>
+            <p class="profile-desc">{{ $team->bio }}</p>
           </div>
         </div>
       @endforeach

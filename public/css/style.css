@@ -1223,17 +1223,18 @@ input:focus {
 }
 
 .profile h6 {
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 2.1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
   color: black;
 }
 .profile .position {
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 2.1rem;
+  font-size: 14px;
+  line-height: 140%;
   color: var(--bird-blue-grey-1000);
-  margin-top: -0.8rem;
 }
 .profile .profile-desc {
   font-family: 'Manrope';
@@ -1241,7 +1242,6 @@ input:focus {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  background-color: red;
 }
 
 /*********************************** WE CREATE  RESPONSIVENESS***************************/
