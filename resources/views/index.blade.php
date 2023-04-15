@@ -13,15 +13,14 @@
             <h1 class="display-4 hero_simplified col-md-10 mx-auto pt-lg-5 pt-sm-2 mt-lg-5 mt-sm-0">Innovative Technology & Custom Software Solutions</h1>
             {{-- <h1 class="display-4 hero_you">For Construction Business Excellence</h1> --}}
             <div class="row">
-              <p class="col col-md-9 text-center my-3 mx-auto">
+              <p class="col col-md-9 text-center mx-auto">
                   We're a B2B software solutions agency that's committed to helping the construction industry, school districts, logistics
                   and government in building and deploying custom, best-of-breed software solutions to enhance processes and improve productivity.
               </p>
             </div>
-            <div class="mb-md-5">
-  
-              <button class="mt-2 me-3 buttn">GET STARTED</button>
-              <button class="mt-2 gradient_btn gradient_btn_find buttn2">FIND OUT MORE</button>
+            <div class="mb-md-5 hero_btn">
+              <button class="mt-0 me-3 buttn">GET STARTED</button>
+              <button class="mt-0 mt-sm-2 gradient_btn gradient_btn_find buttn2">FIND OUT MORE</button>
             </div>
           </div>
     </div>
