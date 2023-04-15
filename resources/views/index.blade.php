@@ -336,7 +336,7 @@
   <section class="mantra_section py-5">
     <div class="container-lg">
       <div class="row align-items-center justify-content-center">
-        <div class="col-12 col-lg-7">
+        <div class="col-12 col-lg-6">
           <div>
             <h2 class="display-6 text-center text-lg-start mantra_heading">What We Believe and Stand For</h2>
             {{-- <p class="lead text-center text-lg-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem
@@ -351,7 +351,7 @@
                   <img src="imgs/mantra/hammer1.svg" alt="hammer icon">
                 </div>
                 <div>
-                  <small class="d-block fw-bolder mantra_small_heading">Experience and Expertise</small>
+                  <small class="d-block mantra_small_heading">Experience and Expertise</small>
                   <small class="d-block  mantra_text">Your business deserves the very best software solutions, that's why we employ the most experienced hands only to develop solutions that enhance your processes</small>
                 </div>
               </div>
@@ -385,7 +385,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5 d-none d-lg-block hold-hands">
+        <div class="col-lg-6 d-none d-lg-block hold-hands">
           <div class="mantra_hands_cont">
             <img class="img-fluid" src="imgs/mantra/hands.svg" alt="hands">
           </div>

@@ -1,5 +1,5 @@
-// var BASE_URL = "http://127.0.0.1:8000/";
-var BASE_URL = "https://www.concise.cfcing.org/";
+var BASE_URL = "http://127.0.0.1:8000/";
+// var BASE_URL = "https://www.concise.cfcing.org/";
 var API_URL = BASE_URL + "api/";
 
 if($("div#image-wrapper")){
@@ -43,7 +43,7 @@ if($("div#image-wrapper")){
                                 "${review?.testimonial}"
                               </p>
                               <div class="row mt-3">
-                                <div style="width: 48px; height: 48px; background-image: url(${review?.filename}); background-size: cover; background-position: center center; border: 1px solid #A5CFEC; border-radius: 72px;">
+                                <div style="width: 48px; height: 48px; background-image: url(${review?.filename}); background-size: cover; background-position: top center; border: 1px solid #A5CFEC; border-radius: 72px;">
                                    
                                 </div>
                                 <div class="col-9">
