@@ -7,32 +7,27 @@
 @section('content')
     <!---------------------------- HERO SECTION ---------------------------->
     <section class="py-5 contact_us">
-        <div class="container-lg h-100 py-5 text-start ">
+        <div class="container-lg h-100 d-flex flex-column justify-content-center text-center text-md-start">
 
-            <h1 class="text-white contact_header fw-bold">Have an inquiry?</h1>
-            <h1 class="contact_sub_header text-white fw-bolder">Contact Us</h1>
+            <h1 class="contact_header">Have an inquiry?</h1>
+            <h1 class="contact_sub_header" style="color: #f2f7fb;">Contact Us</h1>
 
         </div>
     </section>
 
     <!-------------------- PARTNERS SECTION ----------------------->
-    <section class="py-5 contact-card-bg bg-danger" id="form-sect">
+    <section class="py-5 mt-5 bg-white contact-section" id="form-sect">
         <div
             class="container d-flex flex-column justify-content-between flex-lg-row justify-content-lg-between align-items-lg-center">
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <!-- header -->
                 <div>
 
-                    <h1 class="fw-bold header">Get in touch</h1>
-                    <p class="my-4 w-75">Give us a call or drop by anytime, we endeavour to answer all enquiries within
-                        24
-                        hours
-                        on
-                        business
-                        days. We will be happy to answer your questions.</p>
+                    <h1 class="header">Get in touch</h1>
+                    <p class="my-4 w-75 cont-get">Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days. We will be happy to answer your questions.</p>
                 </div>
                 <!-- contact -->
-                <div class="px-4">
+                <div class="px-4 contact_div">
                     <div class="d-flex justify-content-start mt-5">
                         <span class="d-inline-block py-3 px-3 icon-bg rounded">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -42,8 +37,8 @@
                             </svg>
                         </span>
                         <span class="d-flex flex-column justify-content-evenly ms-3">
-                            <small class="block fs-6 fw-semibold">Email</small>
-                            <small class="block fs-6 ">info@concisesoftwaresolutions.com</small>
+                            <small class="block fs-6 contact-title">Email</small>
+                            <small class="block contact-text">info@concisesoftwaresolutions.com</small>
                         </span>
 
                     </div>
@@ -58,8 +53,8 @@
                             </svg>
                         </span>
                         <span class="d-flex flex-column justify-content-evenly ms-3">
-                            <small class="block fs-6 fw-semibold">Phone Number</small>
-                            <small class="block fs-6 ">+1-704-755-5312, +1-704-755-5312</small>
+                            <small class="block fs-6 contact-title">Phone Number</small>
+                            <small class="block contact-text">+1-704-755-5312, +1-704-755-5312</small>
                         </span>
 
                     </div>
@@ -73,16 +68,16 @@
                             </svg>
                         </span>
                         <span class="d-flex flex-column justify-content-evenly ms-3">
-                            <small class="block fs-6 fw-semibold">Address</small>
-                            <small class="block fs-6 ">101 S Tryon St Suite 2700, Charlotte, NC 28280</small>
+                            <small class="block fs-6 contact-title">Address</small>
+                            <small class="block contact-text">101 S Tryon St Suite 2700, Charlotte, NC 28280</small>
                         </span>
 
                     </div>
                 </div>
             </div>
-            <div class="mt-5 mt-lg-0 pt-5 pt-lg-0 col-lg-6">
-                <form class="w-100 px-3 rounded pt-2 px-lg-5 shadow " id="form">
-                    <div class='form-header py-4 mb-5'>
+            <div class="mt-5 mt-lg-0 pt-5 pt-lg-0 col-lg-5">
+                <form class="w-100 rounded" id="form">
+                    <div class='form-header mb-4'>
                         <h1>Send us a message</h1>
                         <p>Your email is safe with us.</p>
                     </div>
@@ -91,12 +86,12 @@
                         <input type="text" class="w-100 py-3 px-2 my-1 rounded border-0" id="name" name="full-name"
                             placeholder="John Doe" required />
                     </div>
-                    <div>
+                    <div class="d-flex flex-column">
                         <label for="email" class="py-1 mt-1">Email Address</label>
                         <input type="email" name="email" id="email" placeholder="johndoe@gmail.com"
                             class="w-100 py-3 my-1 rounded px-2" required />
                     </div>
-                    <div>
+                    <div class="d-flex flex-column">
                         <label for="email" class="py-1 mt-1">What are you interested in?</label>
                         <select id="interest" class="w-100 py-3 px-2 my-1 rounded border-0">
                             <option>Choose an option</option>

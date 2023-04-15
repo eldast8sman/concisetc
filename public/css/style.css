@@ -1576,18 +1576,58 @@ input:focus {
   color: var(--white);
 }
 
+.contact-section .header {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+  color: #384147
+}
+
 .header {
   font-size: 46px;
-  /* 64px */
+}
+
+.cont-get {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 140%;
+  color: #62717B;
 }
 
 .icon-bg {
   background-color: var(--primary-600);
 }
 
+.contact-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px !important;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  color: #000
+}
+
+.contact-text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+  color: #505C65;
+}
+
 #form {
-  height: 60rem;
   background-color: var(--white);
+  border: 1px solid #EBEDEF;
+  padding: 48px;
+}
+
+#form label {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
 }
 
 #form input {
@@ -1596,7 +1636,25 @@ input:focus {
 }
 
 .form-header {
-  height: 7rem;
+  height: auto;
+}
+
+.form-header h1 {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  color: #384147;
+}
+
+.form-header p {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  margin-bottom: 0;
 }
 
 input,
@@ -1609,10 +1667,37 @@ select {
   background: var(--primary-600);
   color: white;
   cursor: pointer;
+  text-transform: uppercase;
 }
-.contact-card-bg {
-  background: url(../imgs/contact/sectionbg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+
+@media (max-width: 450px){
+  #form-sect {
+    margin: 0 10px !important;
+  }
+
+  .contact-section .header {
+    font-size: 32px;
+  }
+
+  .cont-get {
+    width: auto !important;
+    font-size: 16px;
+    margin: 15px 0 !important;
+  }
+
+  .contact_div {
+    padding: 0 !important;
+  }
+
+  .contact-title {
+    font-size: 14px;
+  }
+
+  .contact-text {
+    font-size: 14px;
+  }
+
+  #form {
+    padding: 24px 16px;
+  }
 }
