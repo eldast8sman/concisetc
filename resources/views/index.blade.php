@@ -157,10 +157,10 @@
   <section class="py-5 works_section" id="works">
     <div class="container-lg">
       <p class="mb-0 text-center small_header">Our Works</p>
-      <h2 class="mt-1 text-center big_header">
-        We pride ourselves on delivering the very best custom software solutions. What you see you believe: browse through our portfolio for an overview.
+      <h2 class="mt-1 mx-auto text-center big_header">
+        We pride ourselves on delivering the very best custom software solutions.
       </h2>
-      <div class="row px-lg-5 gx-2 g-md-1 mt-4 mb-3 justify-content-center text-center">
+      <div class="row gx-2 g-md-1 mt-4 mb-3 mx-auto justify-content-center text-center metrics">
         <div class=" col-3 p-sm-0 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">30+</h3>
           <p class="lead mt-0">Clients</p>

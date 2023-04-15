@@ -202,10 +202,18 @@
   background-color: var(--pink-variant);
 }
 
+.works_section .big_header {
+  max-width: 808px;
+}
+
+.works_section .metrics {
+  max-width: 1200px;
+}
+
 .works_section h3 {
   font-weight: 600;
   color: var(--bird-blue-grey-1000);
-  font-family: 'Manrope' sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 48px;
   line-height: 100%;
   letter-spacing: 0.02em;
