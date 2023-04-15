@@ -1058,26 +1058,44 @@ input:focus {
   }
 }
 
-/*********************************** WE CREATE ***************************/
+/*********************************** WE CREATE START OF ABOUT US SECTION ***************************/
 .bg1 {
   background: url(../imgs/wecreate/worldmap\ 1.svg);
   background-position: top right;
   background-repeat: no-repeat;
+
 }
+.contact_us .contact_header {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 100%;
+  color: #EBEDEF;
+}
+
+.contact_us .contact_sub_header {
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+}
+
 .bg2 {
   background: url(../imgs/wecreate/worldmap\ 2.svg);
   background-position: top left;
   background-repeat: no-repeat;
+  /* margin-bottom: 4rem; */
 }
 .contt {
   height: 100%;
 }
 .we-create {
-  height: 25rem;
+  margin: 64px auto;
+  /* height: 25rem; */
 }
 .we-create h1 {
-  font-size: 3.25rem;
-  line-height: 4.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 52px;
+  line-height: 140%;
   font-weight: 600;
   width: 100%;
   color: var(--bird-blue-grey-1000);
@@ -1086,81 +1104,122 @@ input:focus {
   color: var(--primary-900);
 }
 .we-create p {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1rem;
-  line-height: 1.37rem;
+  line-height: 1.4rem;
   color: var(--bird-blue-grey-900);
   width: 80%;
+  max-width: 1041px;
+  margin-bottom: 0;
 }
+
 .we-create-image {
-  height: 30rem;
   width: 100%;
+}
+
+.bg2 .we-create {
+  margin-left: 0;
+}
+
+.bg2 .we-create h1 {
+  font-size: 44px;
+}
+
+.bg2 .we-create p {
+  max-width: 874px;
 }
 
 /*********************************** STAT ***************************/
 
 .container- {
-  height: 18rem;
   background-color: var(--primary-900);
+  padding: 64px 0;
 }
 .container- .p {
   color: var(--primary-100);
   font-weight: 700;
   font-size: 1rem;
+  line-height: 1.5;
 
   text-align: center;
 }
 .container- p {
   color: var(--primary-100);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 .container- h1 {
   color: var(--primary-100);
-  font-weight: 800;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-weight: 600;
+  font-size: 2.88rem;
+  line-height: 2.88rem;
   text-align: center;
 }
 .container- h2 {
   color: var(--primary-100);
   font-weight: 800;
-  font-size: 3rem;
+  font-size: 48px;
+  line-height: 100%;
   margin-bottom: 1rem;
   text-align: center;
 }
 .container- .flex- {
-  width: 50rem;
+  width: 1000px;
+}
+.content- {
+  width: 100%;
+  max-width: 864px;
+  margin: 0 auto;
+}
+
+.flex- h1 {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+}
+
+.flex- p {
+  font-weight: 500;
+  line-height: 100%;
+  font-size: 24px;
 }
 
 /*********************************** MEET ***************************/
 .our-team {
+  padding-top: 70px;
   padding-bottom: 3rem;
 }
 .meet h1 {
   font-weight: 600;
-  font-size: 3.25rem;
-  line-height: 4.5rem;
+  font-size: 52px;
+  line-height: 140%;
   color: var(--bird-blue-grey-1000);
 }
 .meet span {
   color: var(--primary-900);
 }
 .meet p {
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 2.1rem;
+  font-weight: 400;
+  font-size: 1.25rem;
+  max-width: 59.625rem;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 140%;
   color: var(--bird-blue-grey-900);
 }
 
 .profile {
   /* width: 25%; */
+  /* background-color: red; */
 }
 
 .profile img {
   object-fit: cover;
   width: 90%;
+  max-width: 302px;
+  height: 345px;
 }
 
 .profile h6 {
@@ -1169,12 +1228,20 @@ input:focus {
   line-height: 2.1rem;
   color: black;
 }
-.profile p {
+.profile .position {
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 2.1rem;
   color: var(--bird-blue-grey-1000);
-  margin-top: -1rem;
+  margin-top: -0.8rem;
+}
+.profile .profile-desc {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  background-color: red;
 }
 
 /*********************************** WE CREATE  RESPONSIVENESS***************************/
@@ -1449,6 +1516,7 @@ input:focus {
   }
 
   .meet p {
+    color: red;
     font-size: 1rem;
     line-height: 2.1rem;
   }
@@ -1554,6 +1622,8 @@ input:focus {
     line-height: 2.1rem;
   }
 }
+
+/*********************************** END OF ABOUT US SECTION ***************************/
 
 .t_name {
   color: var(--bird-blue-grey-100);

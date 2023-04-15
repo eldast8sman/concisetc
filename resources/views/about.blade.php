@@ -6,37 +6,33 @@
 
 @section('content')
     <!---------------------------- HERO SECTION ---------------------------->
-  <section class="py-5 contact_us">
-    <div class="container-lg h-100 d-flex flex-column justify-content-center text-center text-md-start">
-      <h1 class="text-white contact_header fw-bold">Get to know us!</h1>
-      <h1 class="text-white contact_sub_header fw-bold">About Us</h1>
-    </div>
-  </section>
+    <section class="py-5 contact_us">
+      <div class="container-lg h-100 d-flex flex-column justify-content-center text-center text-md-start">
+        <h1 class="contact_header">Get to know us!</h1>
+        <h1 class="contact_sub_header fw-bold" style="color: #f2f7fb">
+          About Us
+        </h1>
+      </div>
+    </section>
 
 
   <!-------------------- WE CREATE ----------------------->
 
   <div class="bg1">
-    <div class="container contt">
+    <div class="col-lg-11 mx-auto contt">
       <div class="row">
-        <div class="col-lg-10 we-create mt-5">
+        <div class="col-lg-12 we-create mt-5">
           <h1>
-            Your Technology Partner for <span>Business Excellence</span>
-        </h1>
-        <p style="font-size: 20px">
-            Improving <span>Business Efficiency</span> through Innovative Technology & Custom Software Solutions
-        </p>
+            Improving <span>Business Efficiency</span> through Innovative Technology & <span>Custom Software Solutions</span>
+          </h1>
           
           <p>
-            We're a <span>B2B Software Solutions Agency</span>, committed to helping government and construction companies improve efficiency by developing and deploying custom software solutions.
+            We're a B2B Software Solutions Agency, committed to helping government and construction companies improve efficiency by developing and deploying custom software solutions.
             <br>
             Our mission is to help businesses implement and integrate software solutions that increase productivity while optimizing cost-effective options. We provide technical support
             and expertise, and professional guidance, throughout the entire software development process.
             <br>
             Let's Partner with you to give your business the lift that it deserves.
-          </p>
-          <p>
-            <a href="{{ env('APP_URL') }}/contact-us" class="mt-2 me-3 buttn">Contact Us</a>
           </p>
         </div>
       </div>
@@ -46,15 +42,12 @@
   <img class="we-create-image" src="imgs/wecreate/Frame 48095725 (4).png" alt="image of people">
 
   <div class="bg2">
-    <div class="container contt">
+    <div class="col-lg-11 mx-auto contt">
       <div class="row">
-        <div class="col-lg-10 we-create mt-5" style="height: auto !important">
+        <div class="col-lg-11 we-create mt-5">
           <h1>
-            Who <span>We</span> Are
+            Think Digital - Building Automated, Real-Time Systems, Custom Innovative Software for Contractors
           </h1>
-          <p style="font-size: 20px">
-            Think Digital - Building Automated, Real-Time Systems, <span>Custom Innovative Software</span> for Contractors
-          </p>
           <p>
             Concise Software Solutions is not your regular B2B software company. As a B2B Software solutions agency, we develop custom software solutions for businesses in the construction industry.
             We Partner with brands that share the same mindset of innovation, allowing us to design products and services that will help them scale their business.

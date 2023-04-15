@@ -57,6 +57,10 @@ a {
   background-color: var(--white);
 }
 
+.nav_cont {
+  gap: 24px;
+}
+
 .pro_nav .logo_cont {
   width: 202.29px;
 }
@@ -68,6 +72,31 @@ a {
 .pro_nav .nav-link {
   font-weight: 700;
   color: var(--gray-700);
+  font-size: 16px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+@media (max-width: 576px){
+  .nav_cont{
+    gap: unset;
+  }
+}
+
+@media (max-width: 450px){
+  .pro_nav .logo_cont {
+    width: 134.86px;
+  }
+  
+  .pro_nav .logo_cont img {
+    width: 134.86px;
+  }
 }
 
 /*---------------- General Classes ------------------*/

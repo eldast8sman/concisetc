@@ -28,7 +28,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0 nav_cont">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="{{ env('APP_URL') }}/about-us"><small>About</small></a>
           </li>
