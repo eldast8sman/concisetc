@@ -57,7 +57,7 @@
           <p>
             Our goal is to help our clients improve business operations and enhance efficiency by designing responsive procurement, reporting, and logistics software solutions that can be deployed across all platforms – Mobile, Tablet & Web.
             We have got a dedicated team of experts; experienced software engineers, highly trained program managers, and customer 
-            service representatives that are driven by the need to help small and medium businesses achieve <span>Success through Technology.</span>
+            service representatives that are driven by the need to help small and medium businesses achieve Success through Technology.
           </p>
         </div>
       </div>
@@ -115,8 +115,8 @@
         <div class="col-lg-3 col-md-3 profile">
           <div class="col-12 rounded" style="height: 345px;
                                             background-image: url({{ $team->filename }});
-                                            background-size: contain;
-                                            background-position: center center;
+                                            background-size: cover;
+                                            background-position: top center;
                                             background-repeat: no-repeat">
             {{-- <img src="{{ $team->filename }}" alt="{{ $team->name }} - {{ $team->position }}"> --}}
           </div>

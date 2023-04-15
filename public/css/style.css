@@ -1188,7 +1188,7 @@ input:focus {
 
 /*********************************** MEET ***************************/
 .our-team {
-  padding-top: 70px;
+  padding-top: 50px;
   padding-bottom: 3rem;
 }
 .meet h1 {
@@ -1202,7 +1202,7 @@ input:focus {
 }
 .meet p {
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 20px;
   max-width: 59.625rem;
   text-align: center;
   margin: 0 auto;
