@@ -57,10 +57,10 @@
 
   <!----------------------- Footer Section ---------------------------->
   <footer class="bd-footer py-4 py-md-5 footer_sect">
-    <div class="container overflow-hidden">
+    <div class="col-11 mx-auto overflow-hidden">
       <div class="mt-3 mb-4"><img src="{{ asset('imgs/logo.svg') }}" alt="concise logo" /></div>
       <div class="row gx-5 footer_row">
-        <div class="col-6 col-md-4 col-lg-2 mb-3">
+        <div class="col-lg-3 col-md-4 col-sm-12 mb-3">
           <div class="">
             <h6 class="mb-3">LEARN MORE</h6>
             <ul class="list-unstyled">
@@ -76,7 +76,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-6 col-md-4 col-lg-2 mb-3">
+        <div class="col-lg-3 col-md-4 col-sm-12 mb-3">
           <div>
             <h6 class="mb-3">COMPANY</h6>
             <ul class="list-unstyled">
@@ -89,31 +89,31 @@
             </ul>
           </div>
         </div>
-        <div class="col-10 col-sm-8 col-md-3 col-lg-2">
+        <div class="col-5 col-lg-2 col-md-3 col-sm-4">
           <div>
             <h6 class="mb-3">FOLLOW US</h6>
             <div class="row gy-2">
-              <div class="col-2 col-md-4">
+              <div class="col-4 col-md-2>
                 <a href="#" class="socials_cont">
                   <img src="{{ asset('imgs/socials/linkedin.svg') }}" alt="linkedin logo" />
                 </a>
               </div>
-              <div class="col-2 col-md-4">
+              <div class="col-4 col-md-2">
                 <a href="#" class="socials_cont">
                   <img src="{{ asset('imgs/socials/instagram.svg') }}" alt="instagram logo" />
                 </a>
               </div>
-              <div class="col-2 col-md-4">
+              <div class="col-4 col-md-2">
                 <a href="#" class="socials_cont">
                   <img src="{{ asset('imgs/socials/facebook.svg') }}" alt="facebook logo" />
                 </a>
               </div>
-              <div class="col-2 col-md-4">
+              <div class="col-4 col-md-2">
                 <a href="#" class="socials_cont">
                   <img src="{{ asset('imgs/socials/twitter.svg') }}" alt="twitter logo" />
                 </a>
               </div>
-              <div class="col-4">
+              <div class="col-4 col-md-2">
                 <a href="#" class="socials_cont">
                   <img src="{{ asset('imgs/socials/youtube.svg') }}" alt="youtube logo" />
                 </a>
@@ -121,8 +121,8 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-5 offset-lg-1 mt-4 mt-sm-4 mt-md-3 mt-lg-0 mb-3">
-          <div>
+        <div class="col-12 col-lg-4 mt-4 mt-sm-4 mt-md-3 mt-lg-0 mb-3">
+          <div class="footer_margin">
             <h6 class="mb-3">COMPANY</h6>
             <p class="mb-3 f_text">
               Stay up to date with our latest trends and articles on solutions
@@ -140,14 +140,6 @@
       <div class="f_hr mb-3 mt-3"></div>
       <div class="d-flex flex-column flex-sm-row f_copywrite">
         <p class="me-4 mb-1"><span>&COPY;</span> {{ date('Y') }} Concise Software Solutions</p>
-        <ul class="list-unstyled d-flex">
-          <li class="me-3 me-sm-4">
-            <a href="bloglist.html">Blog</a>
-          </li>
-          <li>
-            <a href="aboutUs.html">About Us</a>
-          </li>
-        </ul>
       </div>
     </div>
   </footer>
