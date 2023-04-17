@@ -6,12 +6,18 @@
 
 @section('content')
     <!---------------------------- HERO SECTION ---------------------------->
-  <section class="py-5 contact_us">
-    <div class="container-lg h-100 d-flex flex-column justify-content-center text-center text-md-start">
-      <h1 class="text-white contact_header fw-bold">Read our updated contents!</h1>
-      <h1 class="text-white contact_sub_header fw-bold">Blog</h1>
-    </div>
-  </section>
+    <section class="py-5 contact_us">
+      <div
+        class="container-lg h-100 d-flex flex-column justify-content-center text-center text-md-start"
+      >
+        <h1 class="contact_header contact_header_blog">
+          Read our updated contents!
+        </h1>
+        <h1 class="contact_sub_header contact_header_blog">
+          Blog
+        </h1>
+      </div>
+    </section>
 
   <!-------------------- SETTING YOUR BUSSINESS ----------------------->
   <div class="container ">
@@ -50,9 +56,10 @@
       <a href="{{ env('APP_URL') }}/blogs/{{ $blog->slug }}"  class="col-lg-4 mb-5 flex-view">
         <div style="
           background-image: url({{ $blog->filename }});
-          background-size: contain;
+          background-size: cover;
           background-repeat: no-repeat;
-          background-position: center center
+          background-position: top center;
+          border-radius: 8px;
         "><img src="{{ $blog->filename }}" alt="{{ $blog->title }}" height="250px" style="opacity: 0"></div>
         <div class="flex">
           <p class="date mt-3 mb-3.5">{{ $blog->publication_date }}</p>
