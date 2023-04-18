@@ -19,8 +19,8 @@
               </p>
             </div>
             <div class="mb-md-5 hero_btn">
-              <button class="mt-0 me-3 buttn">GET STARTED</button>
-              <button class="mt-0 mt-sm-2 gradient_btn gradient_btn_find buttn2">FIND OUT MORE</button>
+              <a href="{{ env('APP_URL') }}/contact-us" class="mt-0 me-3 buttn" style="cursor: pointer">GET STARTED</a>
+              <a href="{{ env('APP_URL') }}/about-us" class="mt-0 mt-sm-2 gradient_btn gradient_btn_find buttn2" style="cursor: pointer">FIND OUT MORE</a>
             </div>
           </div>
     </div>

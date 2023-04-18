@@ -60,7 +60,7 @@
           background-repeat: no-repeat;
           background-position: top center;
           border-radius: 8px;
-        "><img src="{{ $blog->filename }}" alt="{{ $blog->title }}" height="250px" style="opacity: 0"></div>
+        "><img src="{{ $blog->filename }}" alt="{{ $blog->title }}" style="opacity: 0"></div>
         <div class="flex">
           <p class="date mt-3 mb-3.5">{{ $blog->publication_date }}</p>
           <h3 class="head">{{ $blog->title }}</h3>
