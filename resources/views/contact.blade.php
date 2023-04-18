@@ -54,7 +54,7 @@
                         </span>
                         <span class="d-flex flex-column justify-content-evenly ms-3">
                             <small class="block fs-6 contact-title">Phone Number</small>
-                            <small class="block contact-text">+1-704-755-5312, +1-704-755-5312</small>
+                            <small class="block contact-text">+1-704-755-5312</small>
                         </span>
 
                     </div>
