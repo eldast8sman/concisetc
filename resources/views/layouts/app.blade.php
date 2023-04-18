@@ -59,7 +59,7 @@
   <footer class="bd-footer py-4 py-md-5 footer_sect">
     <div class="col-11 mx-auto overflow-hidden">
       <div class="mt-3 mb-4"><img src="{{ asset('imgs/logo.svg') }}" alt="concise logo" /></div>
-      <div class="row gx-5 footer_row">
+      <div class="row footer_row">
         <div class="col-lg-3 col-md-4 col-sm-12 mb-3">
           <div class="">
             <h6 class="mb-3">LEARN MORE</h6>
@@ -93,7 +93,7 @@
           <div>
             <h6 class="mb-3">FOLLOW US</h6>
             <div class="row gy-2">
-              <div class="col-4 col-md-2>
+              <div class="col-4 col-md-2">
                 <a href="#" class="socials_cont">
                   <img src="{{ asset('imgs/socials/linkedin.svg') }}" alt="linkedin logo" />
                 </a>
