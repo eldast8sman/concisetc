@@ -96,6 +96,12 @@
   }
 }
 
+@media(max-height: 600px){
+  .hero_section {
+    height: 105vh;
+  }
+}
+
 /*********************************** PARTNERS SECTION ***************************/
 .partners_section {
   background-color: var(--primary-100);
