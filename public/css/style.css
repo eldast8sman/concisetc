@@ -68,7 +68,7 @@
 @media(max-width: 450px){
   .hero_section {
     background-position: 30% 0%;
-    height: 85vh;
+    height: 90vh;
   }
 
   .hero_centered {
@@ -85,12 +85,14 @@
   }
 
   .buttn {
-    width: 100%
+    width: 100%;
+    display: inline-block;
   }
 
   .buttn2{
     width: 100%;
     margin-top: 10px !important;
+    display: inline-block;
   }
 }
 
