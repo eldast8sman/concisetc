@@ -90,7 +90,10 @@ class PageController extends Controller
     }
 
     public function contact(){
-        return view('contact');
+        $services = Service::orderBy('title', 'asc')->get();
+        return view('contact', [
+            'services' => $services
+        ]);
     }
 
     public function projects(){

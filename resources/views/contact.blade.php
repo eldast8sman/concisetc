@@ -94,7 +94,11 @@
                     <div class="d-flex flex-column">
                         <label for="email" class="py-1 mt-1">What are you interested in?</label>
                         <select id="interest" class="w-100 py-3 px-2 my-1 rounded border-0">
-                            <option>Choose an option</option>
+                            <option value="">Choose an option</option>
+                            @foreach ($services as $service)
+                                <option value="{{ $service->title }}">{{ $service->title }}</option>
+                            @endforeach
+                            <option value="Others">Others</option>
                         </select>
                     </div>
                     {{-- <div>
