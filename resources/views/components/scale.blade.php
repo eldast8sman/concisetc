@@ -7,6 +7,6 @@
       <p class="mx-auto mb-4 my-sm-3">
         We've got an experienced & dedicated team of experts ready to kickstart a conversation about your software needs.
       </p>
-      <button class="butn">Contact us to get started!</button>
+      <a href="{{ env('APP_URL') }}/contact-us" class="butn">Contact us to get started!</a>
     </div>
   </section>

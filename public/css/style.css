@@ -1500,7 +1500,7 @@ input:focus {
 }
 
 .mantra_hammer_cont img {
-    width: 100%;
+    width: 48px;
 }
 
 .mantra_small_heading {
@@ -1518,6 +1518,10 @@ input:focus {
 }
 
 @media (max-width: 450px){
+  .mantra_column {
+    width: 90%;
+    margin: 0 auto;
+  }
   .mantra_heading {
     font-size: 20px;
   }
@@ -1527,7 +1531,7 @@ input:focus {
   }
 
   .mantra_hammer_cont img {
-      width: 48px;
+    width: 48px;
   }
 }
 
