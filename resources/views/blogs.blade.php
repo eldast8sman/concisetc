@@ -21,7 +21,7 @@
 
   <!-------------------- SETTING YOUR BUSSINESS ----------------------->
   <div class="container ">
-    <div class="row blog">
+    <a href="{{ env('APP_URL') }}/blogs/{{ $first_blog->slug }}" class="row blog">
       <div class="col-lg-6">
         <div class="blog-img ">
           <img class=" d-flex justify-content-start" src="{{ $first_blog->filename }}" alt="{{ $first_blog->title }}">
@@ -40,7 +40,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 
 
