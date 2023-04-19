@@ -1489,10 +1489,10 @@ input:focus {
 }
 
 .mantra_text {
-  width: 75%;
+  width: 100%;
   font-weight: 400;
   font-size: 16px;
-  line-height: 120%;
+  line-height: 150%;
   letter-spacing: 0.02em;
 }
 
@@ -1515,6 +1515,7 @@ input:focus {
 
 .mantra_hands_cont img {
   width: 100%;
+  float: left;
 }
 
 @media (max-width: 450px){
@@ -1528,10 +1529,6 @@ input:focus {
 
   .mantra_hammer_cont img {
       width: 48px;
-  }
-
-  .mantra_text {
-    width: 100%
   }
 }
 

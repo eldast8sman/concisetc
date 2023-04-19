@@ -333,7 +333,7 @@
 
   <!-------------------- MANTRA SECTION ----------------------->
   <section class="mantra_section py-5">
-    <div class="container-lg">
+    <div class="col-lg-10 mx-auto">
       <div class="row align-items-center justify-content-center">
         <div class="col-12 col-lg-6">
           <div>
@@ -386,7 +386,7 @@
         </div>
         <div class="col-lg-6 d-none d-lg-block hold-hands">
           <div class="mantra_hands_cont">
-            <img class="img-fluid" src="imgs/mantra/hands.svg" alt="hands">
+            <img class="img-fluid" src="imgs/hold_hands.png" alt="hands">
           </div>
         </div>
       </div>
