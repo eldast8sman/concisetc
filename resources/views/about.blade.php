@@ -32,10 +32,12 @@
           
           <p>
             We're a B2B Software Solutions Agency, committed to helping government and construction companies improve efficiency by developing and deploying custom software solutions.
-            <br>
+          </p>
+          <p>
             Our mission is to help businesses implement and integrate software solutions that increase productivity while optimizing cost-effective options. We provide technical support
             and expertise, and professional guidance, throughout the entire software development process.
-            <br>
+          </p>
+          <p>
             Let's Partner with you to give your business the lift that it deserves.
           </p>
         </div>

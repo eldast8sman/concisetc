@@ -1286,6 +1286,7 @@ input:focus {
 
   .we-create p {
     margin: 0 16px;
+    margin-bottom: 10px;
     width: auto;
     font-size: 14px;
   }
