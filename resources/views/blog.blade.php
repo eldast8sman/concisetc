@@ -11,7 +11,8 @@
         <div class="link p-2 mb-3">
           <div class="mb-2 ms-2 inner-link">
             <a class="home" href="{{ env('APP_URL') }}">Home</a>
-            <img src="imgs/bloglist/chevron forward.svg" alt="">
+            <span class="blog">&gt;</span>
+            {{-- <img src="imgs/bloglist/chevron_forward.svg" alt=""> --}}
             <a class="blog" href="{{ env('APP_URL') }}/blogs">Blog</a>
           </div>
           <div class="inner-link2">
@@ -30,9 +31,10 @@
             </div>
 
             <div class="inner-link3">
-              <p class="home">{{ $blog->author }}</p>
-              <img src="imgs/bloglist/separator.svg" alt="">
-              {{ $blog->publication_date }}
+              <p class="home">
+                <span class="blog_author">{{ $blog->author }}</span>
+                <span class="blog_date">{{ $blog->publication_date }}</span>
+              </p>
             </div>
 
             <div class="img mt-3 mb-3">

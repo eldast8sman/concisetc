@@ -474,9 +474,16 @@
   color: var(--gray-900);
   font-size: 1rem;
 }
+
 .blog {
   font-weight: 700;
 }
+
+span.blog {
+  font-size: 20px;
+  line-height: 100%;
+}
+
 .inner-link2 a {
   text-decoration: none;
   color: var(--gray-900);
@@ -510,6 +517,15 @@
   color: var(--gray-900);
   font-size: 1rem;
   font-weight: 400;
+}
+
+.blog_author {
+  padding-right: 20px;
+  border-right: 1px solid #B1B1B1;
+}
+
+.blog_date {
+  margin-left: 20px;
 }
 
 .container-div .img img {
