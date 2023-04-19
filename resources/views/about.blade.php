@@ -4,6 +4,10 @@
     About Us
 @endsection
 
+@section('other_css')
+<link rel="stylesheet" href="{{ asset("css/other_style.css") }}" />
+@endsection
+
 @section('content')
     <!---------------------------- HERO SECTION ---------------------------->
     <section class="py-5 contact_us">
@@ -21,8 +25,8 @@
   <div class="bg1">
     <div class="col-lg-11 mx-auto contt">
       <div class="row">
-        <div class="col-lg-12 we-create mt-5">
-          <h1>
+        <div class="col-lg-12 we-create we-creating mt-5">
+          <h1 class="we_create_h1">
             Improving <span>Business Efficiency</span> through Innovative Technology & <span>Custom Software Solutions</span>
           </h1>
           
@@ -44,8 +48,8 @@
   <div class="bg2">
     <div class="col-lg-11 mx-auto contt">
       <div class="row">
-        <div class="col-lg-11 we-create mt-5">
-          <h1>
+        <div class="col-lg-11 we-create we-creating mt-5">
+          <h1 class="we_create_h1">
             Think Digital - Building Automated, Real-Time Systems, Custom Innovative Software for Contractors
           </h1>
           <p>
