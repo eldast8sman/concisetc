@@ -75,7 +75,7 @@ class PageController extends Controller
     public function blog($slug){
         $blog = Blog::where('slug', $slug)->first();
         $blog->filename = url($blog->filename);
-        $blog->publication_date = date("F d Y", strtotime($blog->publication_date));
+        $blog->publication_date = date("F d\, Y", strtotime($blog->publication_date));
 
         $blogs = Blog::where('id', '<>', $blog->id)->inRandomOrder()->take(3)->get();
         foreach($blogs as $oblog){
