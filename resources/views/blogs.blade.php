@@ -47,7 +47,7 @@
   <div class="container bloglist mt-5">
     <div class="row">
       <div class="col-lg-12 bloglist-head">
-        <p>Latest Post</p>
+        <p>Latest Posts</p>
       </div>
     </div>
     <div class="row" id="blogs">

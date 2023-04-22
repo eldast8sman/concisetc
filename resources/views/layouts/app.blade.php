@@ -92,31 +92,33 @@
         <div class="col-5 col-lg-2 col-md-3 col-sm-4">
           <div>
             <h6 class="mb-3">FOLLOW US</h6>
-            <div class="row gy-2">
-              <div class="col-4">
-                <a href="#" class="socials_cont">
-                  <img src="{{ asset('imgs/socials/linkedin.svg') }}" alt="linkedin logo" />
-                </a>
-              </div>
-              <div class="col-4">
-                <a href="#" class="socials_cont">
-                  <img src="{{ asset('imgs/socials/instagram.svg') }}" alt="instagram logo" />
-                </a>
-              </div>
-              <div class="col-4">
-                <a href="#" class="socials_cont">
-                  <img src="{{ asset('imgs/socials/facebook.svg') }}" alt="facebook logo" />
-                </a>
-              </div>
-              <div class="col-4">
-                <a href="#" class="socials_cont">
-                  <img src="{{ asset('imgs/socials/twitter.svg') }}" alt="twitter logo" />
-                </a>
-              </div>
-              <div class="col-4 col-md-2">
-                <a href="#" class="socials_cont">
-                  <img src="{{ asset('imgs/socials/youtube.svg') }}" alt="youtube logo" />
-                </a>
+            <div class="col-lg-8">
+              <div class="row gy-2">
+                <div class="col-4">
+                  <a href="#" class="socials_cont">
+                    <img src="{{ asset('imgs/socials/linkedin.svg') }}" alt="linkedin logo" />
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="#" class="socials_cont">
+                    <img src="{{ asset('imgs/socials/instagram.svg') }}" alt="instagram logo" />
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="#" class="socials_cont">
+                    <img src="{{ asset('imgs/socials/facebook.svg') }}" alt="facebook logo" />
+                  </a>
+                </div>
+                <div class="col-4">
+                  <a href="#" class="socials_cont">
+                    <img src="{{ asset('imgs/socials/twitter.svg') }}" alt="twitter logo" />
+                  </a>
+                </div>
+                <div class="col-4 col-md-2">
+                  <a href="#" class="socials_cont">
+                    <img src="{{ asset('imgs/socials/youtube.svg') }}" alt="youtube logo" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

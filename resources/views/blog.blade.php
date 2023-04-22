@@ -70,7 +70,7 @@
       <div class="col-lg-4 blogpage2 mt-5">
 
         <div class="blogpage2-head">
-          <p>Related post</p>
+          <p>Related posts</p>
         </div>
 
         @foreach ($blogs as $oblog)
