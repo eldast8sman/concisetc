@@ -4,9 +4,11 @@
       <h1 class="lh-sm">
         Ready to scale up & boost your ROI with software solutions?
       </h1>
-      <p class="mx-auto mb-4 my-sm-3">
+      <p class="mx-auto mt-4 mb-4">
         We've got an experienced & dedicated team of experts ready to kickstart a conversation about your software needs.
       </p>
-      <a href="{{ env('APP_URL') }}/contact-us" class="butn">Contact us to get started!</a>
+      <p class="mt-lg-4 mt-5 mx-auto">
+        <a href="{{ env('APP_URL') }}/contact-us" class="butn mt-3">Contact us to get started!</a>
+      </p>
     </div>
   </section>

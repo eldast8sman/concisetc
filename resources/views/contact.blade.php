@@ -18,7 +18,7 @@
     <!-------------------- PARTNERS SECTION ----------------------->
     <section class="py-5 mt-5 bg-white contact-section" id="form-sect">
         <div
-            class="container d-flex flex-column justify-content-between flex-lg-row justify-content-lg-between align-items-lg-center">
+            class="container d-flex flex-column justify-content-between flex-lg-row justify-content-lg-between align-items-lg-top">
             <div class="col-lg-7">
                 <!-- header -->
                 <div>
