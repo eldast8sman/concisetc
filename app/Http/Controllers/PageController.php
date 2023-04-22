@@ -28,6 +28,7 @@ class PageController extends Controller
         }
 
         $projects = Work::inRandomOrder()->take(4)->get();
+        $cont = 1;
         foreach($projects as $project){
             $image = WorkImage::where('work_id', $project->id)->first();
             if(!empty($image)){
@@ -35,6 +36,8 @@ class PageController extends Controller
             } else {
                 $project->filename = "";
             }
+            $project->class = "works_img_cont".$cont;
+            $cont ++;
         }
         return view('index', [
             'services' => $services,

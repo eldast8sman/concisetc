@@ -184,7 +184,7 @@
           @foreach ($projects as $project)
             <div class="col-12 col-md-6">
               <a href="{{ env('APP_URL') }}/our-work/{{ $project->slug }}"  class="card border-0">
-                <div class="w-100 works_img_cont works_img_cont1 single-work" style="
+                <div class="w-100 works_img_cont {{ $project->class }} single-work" style="
                       background-image: url({{ $project->filename }});
                       background-size: contain;
                       background-repeat: no-repeat;
