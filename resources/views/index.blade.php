@@ -163,19 +163,19 @@
       <div class="row gx-2 g-md-1 mt-4 mb-3 mx-auto justify-content-center text-center metrics">
         <div class=" col-3 p-sm-0 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">30+</h3>
-          <p class="lead mt-0">Clients</p>
+          <p class="lead mt-2">Clients</p>
         </div>
         <div class="col-3 p-sm-0 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">10+</h3>
-          <p class="lead mt-0">Solution Provided</p>
+          <p class="lead mt-2">Solution Provided</p>
         </div>
         <div class="col-3 p-sm-0 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">$5M+</h3>
-          <p class="lead mt-0">Saved</p>
+          <p class="lead mt-2">Saved</p>
         </div>
         <div class="col-3 d-flex flex-column align-items-center small-title">
           <h3 class="display-5 mb-0">100+</h3>
-          <p class="lead mt-0">Hours</p>
+          <p class="lead mt-2">Hours</p>
         </div>
       </div>
 
