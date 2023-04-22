@@ -1701,3 +1701,9 @@ select {
     padding: 24px 16px;
   }
 }
+
+@media (max-width: 360px){
+  .contact-text {
+    font-size: 13px;
+  }
+}
